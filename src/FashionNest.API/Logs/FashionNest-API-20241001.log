@@ -1,0 +1,896 @@
+2024-10-01 14:49:43.219 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-10-01 14:49:43.564 +07:00 [INF] Get all products GetProductsQuery { PageIndex = 1, PageSize = 10 }
+2024-10-01 14:49:43.888 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 14:49:43.892 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 14:49:44.563 +07:00 [INF] Executed DbCommand (43ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[CreatedBy], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [p].[UpdatedBy]
+FROM [Products] AS [p]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-10-01 14:53:24.832 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-10-01 14:53:25.085 +07:00 [INF] Get all products GetProductsQuery { PageIndex = 1, PageSize = 10 }
+2024-10-01 14:53:25.324 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 14:53:25.330 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 14:53:25.808 +07:00 [INF] Executed DbCommand (37ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[CreatedBy], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [p].[UpdatedBy]
+FROM [Products] AS [p]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-10-01 14:53:26.081 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Error mapping types.
+
+Mapping types:
+List`1 -> List`1
+System.Collections.Generic.List`1[[FashionNest.Domain.Entities.Product, FashionNest.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[FashionNest.Application.Features.Products.Queries.GetProducts.ProductResponse, FashionNest.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+   at FashionNest.Application.Features.Products.Queries.GetProducts.GetProductsQueryHandler.Handle(GetProductsQuery request, CancellationToken cancellationToken) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Application\Features\Products\Queries\GetProducts\GetProductsQueryHandler.cs:line 36
+   at FashionNest.API.Controllers.ProductController.GetAll(Int32 pageIndex, Int32 pageSize) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.API\Controllers\ProductController.cs:line 25
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-01 14:56:46.182 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-10-01 14:56:46.462 +07:00 [INF] Get all products GetProductsQuery { PageIndex = 1, PageSize = 10 }
+2024-10-01 14:56:46.666 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 14:56:46.672 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 14:56:47.209 +07:00 [INF] Executed DbCommand (44ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[CreatedBy], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [p].[UpdatedBy]
+FROM [Products] AS [p]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-10-01 14:56:47.504 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Error mapping types.
+
+Mapping types:
+List`1 -> List`1
+System.Collections.Generic.List`1[[FashionNest.Domain.Entities.Product, FashionNest.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[FashionNest.Application.Features.Products.Queries.GetProducts.ProductResponse, FashionNest.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+   at FashionNest.Application.Features.Products.Queries.GetProducts.GetProductsQueryHandler.Handle(GetProductsQuery request, CancellationToken cancellationToken) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Application\Features\Products\Queries\GetProducts\GetProductsQueryHandler.cs:line 36
+   at FashionNest.API.Controllers.ProductController.GetAll(Int32 pageIndex, Int32 pageSize) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.API\Controllers\ProductController.cs:line 25
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-01 14:58:41.298 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-10-01 14:58:41.549 +07:00 [INF] Get all products GetProductsQuery { PageIndex = 1, PageSize = 10 }
+2024-10-01 14:58:41.757 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 14:58:41.760 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 14:58:42.241 +07:00 [INF] Executed DbCommand (37ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[CreatedBy], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [p].[UpdatedBy]
+FROM [Products] AS [p]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-10-01 14:58:42.484 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Error mapping types.
+
+Mapping types:
+List`1 -> List`1
+System.Collections.Generic.List`1[[FashionNest.Domain.Entities.Product, FashionNest.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[FashionNest.Application.Features.Products.Queries.GetProducts.ProductResponse, FashionNest.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+   at FashionNest.Application.Features.Products.Queries.GetProducts.GetProductsQueryHandler.Handle(GetProductsQuery request, CancellationToken cancellationToken) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Application\Features\Products\Queries\GetProducts\GetProductsQueryHandler.cs:line 36
+   at FashionNest.API.Controllers.ProductController.GetAll(Int32 pageIndex, Int32 pageSize) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.API\Controllers\ProductController.cs:line 25
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-01 15:00:29.889 +07:00 [INF] Get all products GetProductsQuery { PageIndex = 1, PageSize = 10 }
+2024-10-01 15:00:29.898 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[CreatedBy], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [p].[UpdatedBy]
+FROM [Products] AS [p]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-10-01 15:00:30.031 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Error mapping types.
+
+Mapping types:
+List`1 -> IEnumerable`1
+System.Collections.Generic.List`1[[FashionNest.Domain.Entities.Product, FashionNest.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.IEnumerable`1[[FashionNest.Application.Features.Products.Queries.GetProducts.ProductResponse, FashionNest.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+   at FashionNest.Application.Features.Products.Queries.GetProducts.GetProductsQueryHandler.Handle(GetProductsQuery request, CancellationToken cancellationToken)
+   at FashionNest.API.Controllers.ProductController.GetAll(Int32 pageIndex, Int32 pageSize) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.API\Controllers\ProductController.cs:line 25
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-01 15:03:15.935 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-10-01 15:03:16.238 +07:00 [INF] Get all products GetProductsQuery { PageIndex = 1, PageSize = 10 }
+2024-10-01 15:03:16.456 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 15:03:16.461 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 15:03:17.015 +07:00 [INF] Executed DbCommand (42ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[CreatedBy], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [p].[UpdatedBy]
+FROM [Products] AS [p]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-10-01 15:03:17.265 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Error mapping types.
+
+Mapping types:
+List`1 -> List`1
+System.Collections.Generic.List`1[[FashionNest.Domain.Entities.Product, FashionNest.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[FashionNest.Application.Features.Products.Queries.GetProducts.ProductResponse, FashionNest.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+   at FashionNest.Application.Features.Products.Queries.GetProducts.GetProductsQueryHandler.Handle(GetProductsQuery request, CancellationToken cancellationToken) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Application\Features\Products\Queries\GetProducts\GetProductsQueryHandler.cs:line 36
+   at FashionNest.API.Controllers.ProductController.GetAll(Int32 pageIndex, Int32 pageSize) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.API\Controllers\ProductController.cs:line 25
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-01 15:04:47.933 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-10-01 15:04:48.221 +07:00 [INF] Get all products GetProductsQuery { PageIndex = 1, PageSize = 10 }
+2024-10-01 15:04:48.422 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 15:04:48.428 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 15:04:48.984 +07:00 [INF] Executed DbCommand (68ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[CreatedBy], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [p].[UpdatedBy]
+FROM [Products] AS [p]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-10-01 15:04:49.232 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Product -> ProductResponse
+FashionNest.Domain.Entities.Product -> FashionNest.Application.Features.Products.Queries.GetProducts.ProductResponse
+   at FashionNest.Application.Features.Products.Queries.GetProducts.GetProductsQueryHandler.Handle(GetProductsQuery request, CancellationToken cancellationToken) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Application\Features\Products\Queries\GetProducts\GetProductsQueryHandler.cs:line 36
+   at FashionNest.API.Controllers.ProductController.GetAll(Int32 pageIndex, Int32 pageSize) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.API\Controllers\ProductController.cs:line 25
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-01 15:06:24.038 +07:00 [INF] Get all products GetProductsQuery { PageIndex = 1, PageSize = 10 }
+2024-10-01 15:06:24.046 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[CreatedBy], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [p].[UpdatedBy]
+FROM [Products] AS [p]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-10-01 15:06:24.182 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Product -> ProductResponse
+FashionNest.Domain.Entities.Product -> FashionNest.Application.Features.Products.Queries.GetProducts.ProductResponse
+   at FashionNest.Application.Features.Products.Queries.GetProducts.GetProductsQueryHandler.Handle(GetProductsQuery request, CancellationToken cancellationToken)
+   at FashionNest.API.Controllers.ProductController.GetAll(Int32 pageIndex, Int32 pageSize) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.API\Controllers\ProductController.cs:line 25
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-01 15:07:04.478 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-10-01 15:07:04.760 +07:00 [INF] Get all products GetProductsQuery { PageIndex = 1, PageSize = 10 }
+2024-10-01 15:07:04.990 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 15:07:04.996 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 15:07:05.527 +07:00 [INF] Executed DbCommand (46ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[CreatedBy], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [p].[UpdatedBy]
+FROM [Products] AS [p]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-10-01 15:07:05.808 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Product -> ProductResponse
+FashionNest.Domain.Entities.Product -> FashionNest.Application.Features.Products.Queries.GetProducts.ProductResponse
+   at FashionNest.Application.Features.Products.Queries.GetProducts.GetProductsQueryHandler.Handle(GetProductsQuery request, CancellationToken cancellationToken) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Application\Features\Products\Queries\GetProducts\GetProductsQueryHandler.cs:line 36
+   at FashionNest.API.Controllers.ProductController.GetAll(Int32 pageIndex, Int32 pageSize) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.API\Controllers\ProductController.cs:line 25
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-01 15:08:01.183 +07:00 [INF] Get all products GetProductsQuery { PageIndex = 1, PageSize = 10 }
+2024-10-01 15:08:01.196 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[CreatedBy], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [p].[UpdatedBy]
+FROM [Products] AS [p]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-10-01 15:08:01.307 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Product -> ProductResponse
+FashionNest.Domain.Entities.Product -> FashionNest.Application.Features.Products.Queries.GetProducts.ProductResponse
+   at FashionNest.Application.Features.Products.Queries.GetProducts.GetProductsQueryHandler.Handle(GetProductsQuery request, CancellationToken cancellationToken) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Application\Features\Products\Queries\GetProducts\GetProductsQueryHandler.cs:line 36
+   at FashionNest.API.Controllers.ProductController.GetAll(Int32 pageIndex, Int32 pageSize) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.API\Controllers\ProductController.cs:line 25
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-01 15:09:21.569 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-10-01 15:09:21.828 +07:00 [INF] Get all products GetProductsQuery { PageIndex = 1, PageSize = 10 }
+2024-10-01 15:09:22.210 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: An error was generated for warning 'Microsoft.EntityFrameworkCore.Query.InvalidIncludePathError': Unable to find navigation 'Categories' specified in string based include path 'Categories'. This exception can be suppressed or logged by passing event ID 'CoreEventId.InvalidIncludePathError' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+   at FashionNest.Application.Features.Products.Queries.GetProducts.GetProductsQueryHandler.Handle(GetProductsQuery request, CancellationToken cancellationToken) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Application\Features\Products\Queries\GetProducts\GetProductsQueryHandler.cs:line 37
+   at FashionNest.API.Controllers.ProductController.GetAll(Int32 pageIndex, Int32 pageSize) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.API\Controllers\ProductController.cs:line 25
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-01 15:10:15.105 +07:00 [INF] Get all products GetProductsQuery { PageIndex = 1, PageSize = 10 }
+2024-10-01 15:10:15.227 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 15:10:15.229 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 15:10:15.829 +07:00 [INF] Executed DbCommand (33ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[CreatedBy], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [p0].[UpdatedBy], [c].[Id], [c].[CreatedAt], [c].[CreatedBy], [c].[Description], [c].[Name], [c].[UpdatedAt], [c].[UpdatedBy]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[CreatedBy], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [p].[UpdatedBy]
+    FROM [Products] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+2024-10-01 15:10:16.092 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Error mapping types.
+
+Mapping types:
+Product -> ProductResponse
+FashionNest.Domain.Entities.Product -> FashionNest.Application.Features.Products.Queries.GetProducts.ProductResponse
+
+Type Map configuration:
+Product -> ProductResponse
+FashionNest.Domain.Entities.Product -> FashionNest.Application.Features.Products.Queries.GetProducts.ProductResponse
+
+Destination Member:
+Void .ctor(System.Guid, System.String, System.String, System.Decimal, Int32, System.String, Boolean, FashionNest.Application.Features.Products.Queries.GetProducts.CategoryResponse), parameter Id
+
+   at FashionNest.Application.Features.Products.Queries.GetProducts.GetProductsQueryHandler.Handle(GetProductsQuery request, CancellationToken cancellationToken)
+   at FashionNest.API.Controllers.ProductController.GetAll(Int32 pageIndex, Int32 pageSize) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.API\Controllers\ProductController.cs:line 25
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-01 15:12:11.247 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-10-01 15:12:11.542 +07:00 [INF] Get all products GetProductsQuery { PageIndex = 1, PageSize = 10 }
+2024-10-01 15:12:11.829 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 15:12:11.835 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 15:12:12.422 +07:00 [INF] Executed DbCommand (55ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[CreatedBy], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [p0].[UpdatedBy], [c].[Id], [c].[CreatedAt], [c].[CreatedBy], [c].[Description], [c].[Name], [c].[UpdatedAt], [c].[UpdatedBy]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[CreatedBy], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [p].[UpdatedBy]
+    FROM [Products] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+2024-10-01 15:12:12.726 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Error mapping types.
+
+Mapping types:
+List`1 -> List`1
+System.Collections.Generic.List`1[[FashionNest.Domain.Entities.Product, FashionNest.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[FashionNest.Application.Features.Products.Queries.GetProducts.ProductResponse, FashionNest.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+   at FashionNest.Application.Features.Products.Queries.GetProducts.GetProductsQueryHandler.Handle(GetProductsQuery request, CancellationToken cancellationToken) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Application\Features\Products\Queries\GetProducts\GetProductsQueryHandler.cs:line 37
+   at FashionNest.API.Controllers.ProductController.GetAll(Int32 pageIndex, Int32 pageSize) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.API\Controllers\ProductController.cs:line 25
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-01 15:15:50.996 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-10-01 15:15:51.241 +07:00 [INF] Get all products GetProductsQuery { PageIndex = 1, PageSize = 10 }
+2024-10-01 15:15:51.431 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 15:15:51.434 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 15:15:51.880 +07:00 [INF] Executed DbCommand (32ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[CreatedBy], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [p0].[UpdatedBy], [c].[Id], [c].[CreatedAt], [c].[CreatedBy], [c].[Description], [c].[Name], [c].[UpdatedAt], [c].[UpdatedBy]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[CreatedBy], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [p].[UpdatedBy]
+    FROM [Products] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+2024-10-01 15:15:52.115 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Error mapping types.
+
+Mapping types:
+List`1 -> List`1
+System.Collections.Generic.List`1[[FashionNest.Domain.Entities.Product, FashionNest.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[FashionNest.Application.Features.Products.Queries.GetProducts.ProductResponse, FashionNest.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+   at FashionNest.Application.Features.Products.Queries.GetProducts.GetProductsQueryHandler.Handle(GetProductsQuery request, CancellationToken cancellationToken) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Application\Features\Products\Queries\GetProducts\GetProductsQueryHandler.cs:line 37
+   at FashionNest.API.Controllers.ProductController.GetAll(Int32 pageIndex, Int32 pageSize) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.API\Controllers\ProductController.cs:line 25
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-01 15:21:39.434 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-10-01 15:21:39.679 +07:00 [INF] Get all roles GetRolesQuery { pageIndex = 1, pageSize = 10 }
+2024-10-01 15:21:39.841 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 15:21:39.844 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 15:21:40.279 +07:00 [INF] Executed DbCommand (46ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[Description], [r].[Name], [r].[UpdatedAt], [r].[UpdatedBy]
+FROM [Roles] AS [r]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-10-01 15:21:40.522 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Error mapping types.
+
+Mapping types:
+List`1 -> List`1
+System.Collections.Generic.List`1[[FashionNest.Domain.Entities.Role, FashionNest.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[FashionNest.Application.Features.Roles.Queries.GetRole.RoleResponse, FashionNest.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+   at FashionNest.Application.Features.Roles.Queries.GetRole.GetRoleQueryHandler.Handle(GetRolesQuery request, CancellationToken cancellationToken) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Application\Features\Roles\Queries\GetRole\GetRoleQueryHandler.cs:line 36
+   at FashionNest.API.Controllers.RoleController.GetAll(Int32 pageIndex, Int32 pageSize) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.API\Controllers\RoleController.cs:line 26
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-01 15:22:10.498 +07:00 [INF] Get all roles GetRolesQuery { pageIndex = 1, pageSize = 10 }
+2024-10-01 15:22:10.507 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[Description], [r].[Name], [r].[UpdatedAt], [r].[UpdatedBy]
+FROM [Roles] AS [r]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-10-01 15:22:10.597 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Error mapping types.
+
+Mapping types:
+List`1 -> List`1
+System.Collections.Generic.List`1[[FashionNest.Domain.Entities.Role, FashionNest.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[FashionNest.Application.Features.Roles.Queries.GetRole.RoleResponse, FashionNest.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+   at FashionNest.Application.Features.Roles.Queries.GetRole.GetRoleQueryHandler.Handle(GetRolesQuery request, CancellationToken cancellationToken) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Application\Features\Roles\Queries\GetRole\GetRoleQueryHandler.cs:line 36
+   at FashionNest.API.Controllers.RoleController.GetAll(Int32 pageIndex, Int32 pageSize) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.API\Controllers\RoleController.cs:line 26
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-01 15:24:42.110 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-10-01 15:24:42.343 +07:00 [INF] Get all roles GetRolesQuery { pageIndex = 1, pageSize = 10 }
+2024-10-01 15:24:42.512 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 15:24:42.514 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 15:24:42.917 +07:00 [INF] Executed DbCommand (43ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[Description], [r].[Name], [r].[UpdatedAt], [r].[UpdatedBy]
+FROM [Roles] AS [r]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-10-01 15:25:30.371 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-10-01 15:25:30.592 +07:00 [INF] Get all products GetProductsQuery { PageIndex = 1, PageSize = 10 }
+2024-10-01 15:25:30.782 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 15:25:30.784 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 15:25:31.261 +07:00 [INF] Executed DbCommand (47ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[CreatedBy], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [p0].[UpdatedBy], [c].[Id], [c].[CreatedAt], [c].[CreatedBy], [c].[Description], [c].[Name], [c].[UpdatedAt], [c].[UpdatedBy]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[CreatedBy], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [p].[UpdatedBy]
+    FROM [Products] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+2024-10-01 15:25:31.542 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Error mapping types.
+
+Mapping types:
+List`1 -> List`1
+System.Collections.Generic.List`1[[FashionNest.Domain.Entities.Product, FashionNest.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[FashionNest.Application.Features.Products.Queries.GetProducts.ProductResponse, FashionNest.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+   at FashionNest.Application.Features.Products.Queries.GetProducts.GetProductsQueryHandler.Handle(GetProductsQuery request, CancellationToken cancellationToken) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Application\Features\Products\Queries\GetProducts\GetProductsQueryHandler.cs:line 37
+   at FashionNest.API.Controllers.ProductController.GetAll(Int32 pageIndex, Int32 pageSize) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.API\Controllers\ProductController.cs:line 25
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-01 15:26:03.537 +07:00 [INF] Get all products GetProductsQuery { PageIndex = 1, PageSize = 10 }
+2024-10-01 15:26:03.546 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[CreatedBy], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [p0].[UpdatedBy], [c].[Id], [c].[CreatedAt], [c].[CreatedBy], [c].[Description], [c].[Name], [c].[UpdatedAt], [c].[UpdatedBy]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[CreatedBy], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [p].[UpdatedBy]
+    FROM [Products] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+2024-10-01 15:26:03.651 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Error mapping types.
+
+Mapping types:
+List`1 -> List`1
+System.Collections.Generic.List`1[[FashionNest.Domain.Entities.Product, FashionNest.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[FashionNest.Application.Features.Products.Queries.GetProducts.ProductResponse, FashionNest.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+   at FashionNest.Application.Features.Products.Queries.GetProducts.GetProductsQueryHandler.Handle(GetProductsQuery request, CancellationToken cancellationToken)
+   at FashionNest.API.Controllers.ProductController.GetAll(Int32 pageIndex, Int32 pageSize) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.API\Controllers\ProductController.cs:line 25
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-01 15:26:16.079 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-10-01 15:26:16.313 +07:00 [INF] Get all products GetProductsQuery { PageIndex = 1, PageSize = 10 }
+2024-10-01 15:26:16.500 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 15:26:16.503 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 15:26:16.991 +07:00 [INF] Executed DbCommand (46ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[CreatedBy], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [p0].[UpdatedBy], [c].[Id], [c].[CreatedAt], [c].[CreatedBy], [c].[Description], [c].[Name], [c].[UpdatedAt], [c].[UpdatedBy]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[CreatedBy], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [p].[UpdatedBy]
+    FROM [Products] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+2024-10-01 15:34:26.043 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-10-01 15:34:26.267 +07:00 [INF] Get all roles GetRolesQuery { pageIndex = 1, pageSize = 10 }
+2024-10-01 15:34:26.455 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 15:34:26.457 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 15:34:26.871 +07:00 [INF] Executed DbCommand (41ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[Description], [r].[Name], [r].[UpdatedAt], [r].[UpdatedBy]
+FROM [Roles] AS [r]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-10-01 15:34:37.871 +07:00 [INF] Get role by id "a6a890a7-1135-4282-941d-9b0fe77fb225"
+2024-10-01 15:34:37.922 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='a6a890a7-1135-4282-941d-9b0fe77fb225' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[Description], [r].[Name], [r].[UpdatedAt], [r].[UpdatedBy]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__p_0
+2024-10-01 15:34:48.382 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='a6a890a7-1135-4282-941d-9b0fe77fb225' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[Description], [r].[Name], [r].[UpdatedAt], [r].[UpdatedBy]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__p_0
+2024-10-01 15:34:48.459 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@p6='a6a890a7-1135-4282-941d-9b0fe77fb225', @p0=NULL (DbType = DateTime2), @p1=NULL (Size = 4000), @p2='bb' (Nullable = false) (Size = 4000), @p3='b' (Nullable = false) (Size = 450), @p4=NULL (DbType = DateTime2), @p5=NULL (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Roles] SET [CreatedAt] = @p0, [CreatedBy] = @p1, [Description] = @p2, [Name] = @p3, [UpdatedAt] = @p4, [UpdatedBy] = @p5
+OUTPUT 1
+WHERE [Id] = @p6;
+2024-10-01 15:34:56.707 +07:00 [INF] Create a new role CreateRoleCommand { Name = c, Description = ccc }
+2024-10-01 15:34:56.734 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='0b6a2069-7779-4c8c-b911-06e8e0e0a6ce', @p1=NULL (DbType = DateTime2), @p2=NULL (Size = 4000), @p3='ccc' (Nullable = false) (Size = 4000), @p4='c' (Nullable = false) (Size = 450), @p5=NULL (DbType = DateTime2), @p6=NULL (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Roles] ([Id], [CreatedAt], [CreatedBy], [Description], [Name], [UpdatedAt], [UpdatedBy])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2024-10-01 15:35:01.087 +07:00 [INF] Get all roles GetRolesQuery { pageIndex = 1, pageSize = 10 }
+2024-10-01 15:35:01.093 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[Description], [r].[Name], [r].[UpdatedAt], [r].[UpdatedBy]
+FROM [Roles] AS [r]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-10-01 15:35:06.021 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='a6a890a7-1135-4282-941d-9b0fe77fb225' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[Description], [r].[Name], [r].[UpdatedAt], [r].[UpdatedBy]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__p_0
+2024-10-01 15:35:06.038 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='a6a890a7-1135-4282-941d-9b0fe77fb225'], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [Roles]
+OUTPUT 1
+WHERE [Id] = @p0;
+2024-10-01 15:35:08.915 +07:00 [INF] Get all roles GetRolesQuery { pageIndex = 1, pageSize = 10 }
+2024-10-01 15:35:08.927 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[Description], [r].[Name], [r].[UpdatedAt], [r].[UpdatedBy]
+FROM [Roles] AS [r]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-10-01 15:35:38.669 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-10-01 15:35:38.886 +07:00 [INF] Get role by id "a6a890a7-1135-4282-941d-9b0fe77fb225"
+2024-10-01 15:35:39.556 +07:00 [INF] Executed DbCommand (43ms) [Parameters=[@__p_0='a6a890a7-1135-4282-941d-9b0fe77fb225' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[Description], [r].[Name], [r].[UpdatedAt], [r].[UpdatedBy]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__p_0
+2024-10-01 15:35:39.686 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Role with Id a6a890a7-1135-4282-941d-9b0fe77fb225 not found
+   at FashionNest.Application.Features.Roles.Queries.GetRoleById.GetRoleByIdQueryHandler.Handle(GetRoleByIdQuery request, CancellationToken cancellationToken) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Application\Features\Roles\Queries\GetRoleById\GetRoleByIdQueryHandler.cs:line 38
+   at FashionNest.API.Controllers.RoleController.GetById(Guid id) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.API\Controllers\RoleController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-01 15:35:44.191 +07:00 [INF] Get all roles GetRolesQuery { pageIndex = 1, pageSize = 10 }
+2024-10-01 15:35:44.198 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 15:35:44.202 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 15:35:44.216 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[Description], [r].[Name], [r].[UpdatedAt], [r].[UpdatedBy]
+FROM [Roles] AS [r]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-10-01 15:35:51.087 +07:00 [INF] Get role by id "0b6a2069-7779-4c8c-b911-06e8e0e0a6ce"
+2024-10-01 15:35:51.094 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='0b6a2069-7779-4c8c-b911-06e8e0e0a6ce' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[Description], [r].[Name], [r].[UpdatedAt], [r].[UpdatedBy]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__p_0
+2024-10-01 15:35:51.190 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Role -> RoleResponse
+FashionNest.Domain.Entities.Role -> FashionNest.Application.Features.Roles.Queries.GetRoleById.RoleResponse
+   at FashionNest.Application.Features.Roles.Queries.GetRoleById.GetRoleByIdQueryHandler.Handle(GetRoleByIdQuery request, CancellationToken cancellationToken) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Application\Features\Roles\Queries\GetRoleById\GetRoleByIdQueryHandler.cs:line 38
+   at FashionNest.API.Controllers.RoleController.GetById(Guid id) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.API\Controllers\RoleController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-01 15:36:25.568 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-10-01 15:36:25.776 +07:00 [INF] Get all products GetProductsQuery { PageIndex = 1, PageSize = 10 }
+2024-10-01 15:36:25.983 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 15:36:25.987 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 15:36:26.446 +07:00 [INF] Executed DbCommand (43ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[CreatedBy], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [p0].[UpdatedBy], [c].[Id], [c].[CreatedAt], [c].[CreatedBy], [c].[Description], [c].[Name], [c].[UpdatedAt], [c].[UpdatedBy]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[CreatedBy], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [p].[UpdatedBy]
+    FROM [Products] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+2024-10-01 15:36:33.776 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='a8167ad3-d775-4f98-b207-8f1a6d877076' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[CreatedBy], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [p].[UpdatedBy]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @__p_0
+2024-10-01 15:36:33.921 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: The key value at position 0 of the call to 'DbSet<Product>.Find' was of type 'CategoryId', which does not match the property type of 'ProductId'.
+   at FashionNest.Application.Features.Products.Queries.GetProductById.GetProductByIdQueryHandler.Handle(GetProductByIdQuery request, CancellationToken cancellationToken) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Application\Features\Products\Queries\GetProductById\GetProductByIdQueryHandler.cs:line 37
+   at FashionNest.API.Controllers.ProductController.GetById(Guid id) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.API\Controllers\ProductController.cs:line 33
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-01 15:38:06.218 +07:00 [INF] Get all products GetProductsQuery { PageIndex = 1, PageSize = 10 }
+2024-10-01 15:38:06.225 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[CreatedBy], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [p0].[UpdatedBy], [c].[Id], [c].[CreatedAt], [c].[CreatedBy], [c].[Description], [c].[Name], [c].[UpdatedAt], [c].[UpdatedBy]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[CreatedBy], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [p].[UpdatedBy]
+    FROM [Products] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+2024-10-01 15:38:17.271 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='a8167ad3-d775-4f98-b207-8f1a6d877076' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[CreatedBy], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [p].[UpdatedBy]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @__p_0
+2024-10-01 15:38:17.380 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: The key value at position 0 of the call to 'DbSet<Product>.Find' was of type 'CategoryId', which does not match the property type of 'ProductId'.
+   at FashionNest.Application.Features.Products.Queries.GetProductById.GetProductByIdQueryHandler.Handle(GetProductByIdQuery request, CancellationToken cancellationToken)
+   at FashionNest.API.Controllers.ProductController.GetById(Guid id) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.API\Controllers\ProductController.cs:line 33
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-01 15:39:55.769 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.MissingMethodException: Attempted to access a missing method.
+   at FashionNest.Application.Features.Products.Queries.GetProductById.GetProductByIdQueryHandler..ctor(IProductRepository productRepository)
+   at ResolveService(ILEmitResolverBuilderRuntimeContext, ServiceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.Handle(IRequest`1 request, IServiceProvider serviceProvider, CancellationToken cancellationToken)
+   at MediatR.Mediator.Send[TResponse](IRequest`1 request, CancellationToken cancellationToken)
+   at FashionNest.API.Controllers.ProductController.GetById(Guid id) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.API\Controllers\ProductController.cs:line 33
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-01 15:41:31.328 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-10-01 15:41:31.537 +07:00 [INF] Get all products GetProductsQuery { PageIndex = 1, PageSize = 10 }
+2024-10-01 15:41:31.735 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 15:41:31.738 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 15:41:32.199 +07:00 [INF] Executed DbCommand (43ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[CreatedBy], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [p0].[UpdatedBy], [c].[Id], [c].[CreatedAt], [c].[CreatedBy], [c].[Description], [c].[Name], [c].[UpdatedAt], [c].[UpdatedBy]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[CreatedBy], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [p].[UpdatedBy]
+    FROM [Products] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+2024-10-01 15:41:39.788 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='a8167ad3-d775-4f98-b207-8f1a6d877076' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[CreatedBy], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [p].[UpdatedBy]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @__p_0
+2024-10-01 15:41:39.935 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: The key value at position 0 of the call to 'DbSet<Category>.Find' was of type 'Guid', which does not match the property type of 'CategoryId'.
+   at FashionNest.Application.Features.Products.Queries.GetProductById.GetProductByIdQueryHandler.Handle(GetProductByIdQuery request, CancellationToken cancellationToken) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Application\Features\Products\Queries\GetProductById\GetProductByIdQueryHandler.cs:line 41
+   at FashionNest.API.Controllers.ProductController.GetById(Guid id) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.API\Controllers\ProductController.cs:line 33
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-01 15:43:10.347 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-10-01 15:43:11.068 +07:00 [INF] Executed DbCommand (41ms) [Parameters=[@__p_0='a8167ad3-d775-4f98-b207-8f1a6d877076' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[CreatedBy], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [p].[UpdatedBy]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @__p_0
+2024-10-01 15:43:11.290 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: The key value at position 0 of the call to 'DbSet<Category>.Find' was of type 'Guid', which does not match the property type of 'CategoryId'.
+   at FashionNest.Application.Features.Products.Queries.GetProductById.GetProductByIdQueryHandler.Handle(GetProductByIdQuery request, CancellationToken cancellationToken) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Application\Features\Products\Queries\GetProductById\GetProductByIdQueryHandler.cs:line 41
+   at FashionNest.API.Controllers.ProductController.GetById(Guid id) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.API\Controllers\ProductController.cs:line 33
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-01 15:44:52.753 +07:00 [INF] Get role by id "a8167ad3-d775-4f98-b207-8f1a6d877076"
+2024-10-01 15:44:52.769 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='a8167ad3-d775-4f98-b207-8f1a6d877076' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[Description], [r].[Name], [r].[UpdatedAt], [r].[UpdatedBy]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__p_0
+2024-10-01 15:44:52.868 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Role with Id a8167ad3-d775-4f98-b207-8f1a6d877076 not found
+   at FashionNest.Application.Features.Roles.Queries.GetRoleById.GetRoleByIdQueryHandler.Handle(GetRoleByIdQuery request, CancellationToken cancellationToken) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Application\Features\Roles\Queries\GetRoleById\GetRoleByIdQueryHandler.cs:line 38
+   at FashionNest.API.Controllers.RoleController.GetById(Guid id) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.API\Controllers\RoleController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-01 15:45:00.781 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='a8167ad3-d775-4f98-b207-8f1a6d877076' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[CreatedBy], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [p].[UpdatedBy]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @__p_0
+2024-10-01 15:45:00.793 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='63c4623d-58a6-4a6d-9d3f-7c789a1446af' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[CreatedBy], [c].[Description], [c].[Name], [c].[UpdatedAt], [c].[UpdatedBy]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0
+2024-10-01 22:55:13.648 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-10-01 22:55:13.943 +07:00 [INF] Get all products GetProductsQuery { PageIndex = 1, PageSize = 10 }
+2024-10-01 22:55:14.234 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 22:55:14.237 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-01 22:55:14.935 +07:00 [INF] Executed DbCommand (74ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[CreatedBy], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [p0].[UpdatedBy], [c].[Id], [c].[CreatedAt], [c].[CreatedBy], [c].[Description], [c].[Name], [c].[UpdatedAt], [c].[UpdatedBy]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[CreatedBy], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [p].[UpdatedBy]
+    FROM [Products] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+2024-10-01 22:56:14.917 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='a8167ad3-d775-4f98-b207-8f1a6d877076' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[CreatedBy], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [p].[UpdatedBy]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @__p_0
+2024-10-01 22:56:14.932 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='63c4623d-58a6-4a6d-9d3f-7c789a1446af' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[CreatedBy], [c].[Description], [c].[Name], [c].[UpdatedAt], [c].[UpdatedBy]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0
+2024-10-01 22:56:15.022 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[@p11='a8167ad3-d775-4f98-b207-8f1a6d877076', @p0='63c4623d-58a6-4a6d-9d3f-7c789a1446af', @p1=NULL (DbType = DateTime2), @p2=NULL (Size = 4000), @p3='' (Size = 4000), @p4='' (Size = 4000), @p5='True', @p6='T-Shirt' (Nullable = false) (Size = 4000), @p7='200000' (Precision = 18) (Scale = 2), @p8='2', @p9=NULL (DbType = DateTime2), @p10=NULL (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Products] SET [CategoryId] = @p0, [CreatedAt] = @p1, [CreatedBy] = @p2, [Description] = @p3, [Image] = @p4, [IsRental] = @p5, [Name] = @p6, [Price] = @p7, [Stock] = @p8, [UpdatedAt] = @p9, [UpdatedBy] = @p10
+OUTPUT 1
+WHERE [Id] = @p11;
+2024-10-01 22:56:42.303 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='d2020a52-96ba-4a1a-97fb-8c1e1d9bef3a', @p1=NULL (DbType = DateTime2), @p2=NULL (Size = 4000), @p3='' (Nullable = false) (Size = 4000), @p4='Bottom' (Nullable = false) (Size = 4000), @p5=NULL (DbType = DateTime2), @p6=NULL (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Categories] ([Id], [CreatedAt], [CreatedBy], [Description], [Name], [UpdatedAt], [UpdatedBy])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);

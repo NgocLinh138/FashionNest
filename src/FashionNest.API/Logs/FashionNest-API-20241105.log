@@ -1,0 +1,870 @@
+2024-11-05 14:39:44.788 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-11-05 14:39:44.869 +07:00 [WRN] The 'OrderStatus' property 'Status' on entity type 'Order' is configured with a database-generated default, but has no configured sentinel value. The database-generated default will always be used for inserts when the property has the value '0', since this is the CLR default for the 'OrderStatus' type. Consider using a nullable type, using a nullable backing field, or setting the sentinel value for the property to ensure the database default is used when, and only when, appropriate. See https://aka.ms/efcore-docs-default-values for more information.
+2024-11-05 14:39:45.559 +07:00 [INF] Executed DbCommand (44ms) [Parameters=[@p0='8c452e97-efb4-48dc-8d7c-5b59ba238127', @p1=NULL (DbType = Guid), @p2=NULL (DbType = DateTime2), @p3=NULL (Size = 4000), @p4='2024-11-05T07:39:44.9422029Z', @p5=NULL (DbType = Guid), @p6='Draft' (Nullable = false) (Size = 4000), @p7='29.99' (Precision = 18) (Scale = 2), @p8=NULL (DbType = DateTime2), @p9=NULL (Size = 4000), @p10='c36151b3-11a9-458b-b3c9-806090266f0c', @p11='eee3931b-29bb-4d9c-94f7-c703e16ade42', @p12=NULL (DbType = DateTime2), @p13=NULL (Size = 4000), @p14='8c452e97-efb4-48dc-8d7c-5b59ba238127', @p15='29.99' (Precision = 18) (Scale = 2), @p16='45898c2b-8d10-4e49-ba79-f787bc177477', @p17='1', @p18=NULL (DbType = DateTime2), @p19=NULL (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Orders] ([Id], [CouponId], [CreatedAt], [CreatedBy], [OrderDate], [PaymentId], [Status], [TotalPrice], [UpdatedAt], [UpdatedBy], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+INSERT INTO [OrderItems] ([Id], [CreatedAt], [CreatedBy], [OrderId], [Price], [ProductId], [Quantity], [UpdatedAt], [UpdatedBy])
+VALUES (@p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19);
+2024-11-05 14:40:17.947 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='591f864e-0610-41ee-870a-5ec101499294', @p1='29.99' (Precision = 18) (Scale = 2), @p2=NULL (Size = 4000), @p3='Payment for order' (Size = 4000), @p4='VNPay' (Size = 4000), @p5='2024-11-05T07:40:17.9056348Z', @p6='Pending' (Size = 4000), @p7=NULL (DbType = DateTime2), @p8=NULL (Size = 4000), @p9='c36151b3-11a9-458b-b3c9-806090266f0c'], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payments] ([Id], [Amount], [CreatedBy], [Description], [Method], [PaymentDate], [Status], [UpdatedAt], [UpdatedBy], [UserId])
+OUTPUT INSERTED.[CreatedAt]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+2024-11-05 14:40:18.220 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='6a5ed706-d13d-4856-9b0b-6ccde30d8d36' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CouponId], [o].[CreatedAt], [o].[CreatedBy], [o].[OrderDate], [o].[PaymentId], [o].[Status], [o].[TotalPrice], [o].[UpdatedAt], [o].[UpdatedBy], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Id] = @__p_0
+2024-11-05 14:40:18.256 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[@p10='6a5ed706-d13d-4856-9b0b-6ccde30d8d36', @p0=NULL (DbType = Guid), @p1=NULL (DbType = DateTime2), @p2=NULL (Size = 4000), @p3='2024-10-28T06:01:08.1180832', @p4='591f864e-0610-41ee-870a-5ec101499294' (Nullable = true), @p5='Draft' (Nullable = false) (Size = 4000), @p6='0' (Precision = 18) (Scale = 2), @p7=NULL (DbType = DateTime2), @p8=NULL (Size = 4000), @p9='fc749758-d546-4bd2-bf96-8089e5206568'], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Orders] SET [CouponId] = @p0, [CreatedAt] = @p1, [CreatedBy] = @p2, [OrderDate] = @p3, [PaymentId] = @p4, [Status] = @p5, [TotalPrice] = @p6, [UpdatedAt] = @p7, [UpdatedBy] = @p8, [UserId] = @p9
+OUTPUT 1
+WHERE [Id] = @p10;
+2024-11-05 14:43:19.379 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='be52bd7d-4d55-4626-a6c0-3c776e5c9cf5', @p1=NULL (DbType = Guid), @p2=NULL (DbType = DateTime2), @p3=NULL (Size = 4000), @p4='2024-11-05T07:43:19.3710432Z', @p5=NULL (DbType = Guid), @p6='Draft' (Nullable = false) (Size = 4000), @p7='29.99' (Precision = 18) (Scale = 2), @p8=NULL (DbType = DateTime2), @p9=NULL (Size = 4000), @p10='fc749758-d546-4bd2-bf96-8089e5206568', @p11='6d48b49d-8a6c-44bf-b849-bdee044517a5', @p12=NULL (DbType = DateTime2), @p13=NULL (Size = 4000), @p14='be52bd7d-4d55-4626-a6c0-3c776e5c9cf5', @p15='29.99' (Precision = 18) (Scale = 2), @p16='45898c2b-8d10-4e49-ba79-f787bc177477', @p17='1', @p18=NULL (DbType = DateTime2), @p19=NULL (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Orders] ([Id], [CouponId], [CreatedAt], [CreatedBy], [OrderDate], [PaymentId], [Status], [TotalPrice], [UpdatedAt], [UpdatedBy], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+INSERT INTO [OrderItems] ([Id], [CreatedAt], [CreatedBy], [OrderId], [Price], [ProductId], [Quantity], [UpdatedAt], [UpdatedBy])
+VALUES (@p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19);
+2024-11-05 14:43:38.586 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='ee512eac-8cc4-44b9-a70c-91b97186aaa1', @p1='29.99' (Precision = 18) (Scale = 2), @p2=NULL (Size = 4000), @p3='Payment for order' (Size = 4000), @p4='VNPay' (Size = 4000), @p5='2024-11-05T07:43:38.5822374Z', @p6='Pending' (Size = 4000), @p7=NULL (DbType = DateTime2), @p8=NULL (Size = 4000), @p9='fc749758-d546-4bd2-bf96-8089e5206568'], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payments] ([Id], [Amount], [CreatedBy], [Description], [Method], [PaymentDate], [Status], [UpdatedAt], [UpdatedBy], [UserId])
+OUTPUT INSERTED.[CreatedAt]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+2024-11-05 14:43:38.593 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='6a5ed706-d13d-4856-9b0b-6ccde30d8d36' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CouponId], [o].[CreatedAt], [o].[CreatedBy], [o].[OrderDate], [o].[PaymentId], [o].[Status], [o].[TotalPrice], [o].[UpdatedAt], [o].[UpdatedBy], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Id] = @__p_0
+2024-11-05 14:43:38.600 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@p10='6a5ed706-d13d-4856-9b0b-6ccde30d8d36', @p0=NULL (DbType = Guid), @p1=NULL (DbType = DateTime2), @p2=NULL (Size = 4000), @p3='2024-10-28T06:01:08.1180832', @p4='ee512eac-8cc4-44b9-a70c-91b97186aaa1' (Nullable = true), @p5='Draft' (Nullable = false) (Size = 4000), @p6='0' (Precision = 18) (Scale = 2), @p7=NULL (DbType = DateTime2), @p8=NULL (Size = 4000), @p9='fc749758-d546-4bd2-bf96-8089e5206568'], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Orders] SET [CouponId] = @p0, [CreatedAt] = @p1, [CreatedBy] = @p2, [OrderDate] = @p3, [PaymentId] = @p4, [Status] = @p5, [TotalPrice] = @p6, [UpdatedAt] = @p7, [UpdatedBy] = @p8, [UserId] = @p9
+OUTPUT 1
+WHERE [Id] = @p10;
+2024-11-05 14:44:48.734 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-11-05 14:44:48.807 +07:00 [WRN] The 'OrderStatus' property 'Status' on entity type 'Order' is configured with a database-generated default, but has no configured sentinel value. The database-generated default will always be used for inserts when the property has the value '0', since this is the CLR default for the 'OrderStatus' type. Consider using a nullable type, using a nullable backing field, or setting the sentinel value for the property to ensure the database default is used when, and only when, appropriate. See https://aka.ms/efcore-docs-default-values for more information.
+2024-11-05 14:44:49.374 +07:00 [INF] Executed DbCommand (38ms) [Parameters=[@p0='e8f7750b-cfd7-4b5e-b8ef-6a67800cab31', @p1=NULL (DbType = Guid), @p2=NULL (DbType = DateTime2), @p3=NULL (Size = 4000), @p4='2024-11-05T07:44:48.8731564Z', @p5=NULL (DbType = Guid), @p6='Draft' (Nullable = false) (Size = 4000), @p7='29.99' (Precision = 18) (Scale = 2), @p8=NULL (DbType = DateTime2), @p9=NULL (Size = 4000), @p10='fc749758-d546-4bd2-bf96-8089e5206568', @p11='6cb1641b-7a95-4f13-a00d-9f38597104d6', @p12=NULL (DbType = DateTime2), @p13=NULL (Size = 4000), @p14='e8f7750b-cfd7-4b5e-b8ef-6a67800cab31', @p15='29.99' (Precision = 18) (Scale = 2), @p16='45898c2b-8d10-4e49-ba79-f787bc177477', @p17='1', @p18=NULL (DbType = DateTime2), @p19=NULL (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Orders] ([Id], [CouponId], [CreatedAt], [CreatedBy], [OrderDate], [PaymentId], [Status], [TotalPrice], [UpdatedAt], [UpdatedBy], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+INSERT INTO [OrderItems] ([Id], [CreatedAt], [CreatedBy], [OrderId], [Price], [ProductId], [Quantity], [UpdatedAt], [UpdatedBy])
+VALUES (@p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19);
+2024-11-05 14:45:41.015 +07:00 [INF] Executed DbCommand (9ms) [Parameters=[@p0='4fc7e8d9-6c59-4b6f-b626-8d2aac555837', @p1='29.99' (Precision = 18) (Scale = 2), @p2=NULL (Size = 4000), @p3='Payment for order' (Size = 4000), @p4='VNPay' (Size = 4000), @p5='2024-11-05T07:45:40.9737107Z', @p6='Pending' (Size = 4000), @p7=NULL (DbType = DateTime2), @p8=NULL (Size = 4000), @p9='fc749758-d546-4bd2-bf96-8089e5206568'], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payments] ([Id], [Amount], [CreatedBy], [Description], [Method], [PaymentDate], [Status], [UpdatedAt], [UpdatedBy], [UserId])
+OUTPUT INSERTED.[CreatedAt]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+2024-11-05 14:45:41.267 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='e8f7750b-cfd7-4b5e-b8ef-6a67800cab31' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CouponId], [o].[CreatedAt], [o].[CreatedBy], [o].[OrderDate], [o].[PaymentId], [o].[Status], [o].[TotalPrice], [o].[UpdatedAt], [o].[UpdatedBy], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Id] = @__p_0
+2024-11-05 14:45:41.298 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@p10='e8f7750b-cfd7-4b5e-b8ef-6a67800cab31', @p0=NULL (DbType = Guid), @p1=NULL (DbType = DateTime2), @p2=NULL (Size = 4000), @p3='2024-11-05T07:44:48.8731564', @p4='4fc7e8d9-6c59-4b6f-b626-8d2aac555837' (Nullable = true), @p5='Draft' (Nullable = false) (Size = 4000), @p6='0' (Precision = 18) (Scale = 2), @p7=NULL (DbType = DateTime2), @p8=NULL (Size = 4000), @p9='fc749758-d546-4bd2-bf96-8089e5206568'], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Orders] SET [CouponId] = @p0, [CreatedAt] = @p1, [CreatedBy] = @p2, [OrderDate] = @p3, [PaymentId] = @p4, [Status] = @p5, [TotalPrice] = @p6, [UpdatedAt] = @p7, [UpdatedBy] = @p8, [UserId] = @p9
+OUTPUT 1
+WHERE [Id] = @p10;
+2024-11-05 14:47:23.225 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='ee512eac-8cc4-44b9-a70c-91b97186aaa1' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Amount], [p].[CreatedAt], [p].[CreatedBy], [p].[Description], [p].[Method], [p].[PaymentDate], [p].[Status], [p].[UpdatedAt], [p].[UpdatedBy], [p].[UserId]
+FROM [Payments] AS [p]
+WHERE [p].[Id] = @__p_0
+2024-11-05 14:47:23.237 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@p10='ee512eac-8cc4-44b9-a70c-91b97186aaa1', @p0='29.99' (Precision = 18) (Scale = 2), @p1='2024-09-28T21:45:22.2392439', @p2=NULL (Size = 4000), @p3='Payment for order' (Size = 4000), @p4='VNPay' (Size = 4000), @p5='2024-11-05T07:43:38.5822374', @p6='-1' (Size = 4000), @p7=NULL (DbType = DateTime2), @p8=NULL (Size = 4000), @p9='fc749758-d546-4bd2-bf96-8089e5206568'], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Payments] SET [Amount] = @p0, [CreatedAt] = @p1, [CreatedBy] = @p2, [Description] = @p3, [Method] = @p4, [PaymentDate] = @p5, [Status] = @p6, [UpdatedAt] = @p7, [UpdatedBy] = @p8, [UserId] = @p9
+OUTPUT 1
+WHERE [Id] = @p10;
+2024-11-05 14:48:10.448 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='ee512eac-8cc4-44b9-a70c-91b97186aaa1' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Amount], [p].[CreatedAt], [p].[CreatedBy], [p].[Description], [p].[Method], [p].[PaymentDate], [p].[Status], [p].[UpdatedAt], [p].[UpdatedBy], [p].[UserId]
+FROM [Payments] AS [p]
+WHERE [p].[Id] = @__p_0
+2024-11-05 14:48:10.949 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The value of a failure result can not be accessed.
+   at FashionNest.Domain.Common.Result`1.get_Value() in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Domain\Common\Result.cs:line 52
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-11-05 14:48:11.173 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The exception handler configured on ExceptionHandlerOptions produced a 404 status response. This InvalidOperationException containing the original exception was thrown since this is often due to a misconfigured ExceptionHandlingPath. If the exception handler is expected to return 404 status responses then set AllowStatusCode404Response to true.
+ ---> System.InvalidOperationException: The value of a failure result can not be accessed.
+   at FashionNest.Domain.Common.Result`1.get_Value() in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Domain\Common\Result.cs:line 52
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-11-05 14:48:21.119 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='3fa85f64-5717-4562-b3fc-2c963f66afa6' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Amount], [p].[CreatedAt], [p].[CreatedBy], [p].[Description], [p].[Method], [p].[PaymentDate], [p].[Status], [p].[UpdatedAt], [p].[UpdatedBy], [p].[UserId]
+FROM [Payments] AS [p]
+WHERE [p].[Id] = @__p_0
+2024-11-05 14:48:21.554 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The value of a failure result can not be accessed.
+   at FashionNest.Domain.Common.Result`1.get_Value() in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Domain\Common\Result.cs:line 52
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-11-05 14:48:21.760 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The exception handler configured on ExceptionHandlerOptions produced a 404 status response. This InvalidOperationException containing the original exception was thrown since this is often due to a misconfigured ExceptionHandlingPath. If the exception handler is expected to return 404 status responses then set AllowStatusCode404Response to true.
+ ---> System.InvalidOperationException: The value of a failure result can not be accessed.
+   at FashionNest.Domain.Common.Result`1.get_Value() in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Domain\Common\Result.cs:line 52
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-11-05 14:48:25.085 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='3fa85f64-5717-4562-b3fc-2c963f66afa6' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Amount], [p].[CreatedAt], [p].[CreatedBy], [p].[Description], [p].[Method], [p].[PaymentDate], [p].[Status], [p].[UpdatedAt], [p].[UpdatedBy], [p].[UserId]
+FROM [Payments] AS [p]
+WHERE [p].[Id] = @__p_0
+2024-11-05 14:48:25.510 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The value of a failure result can not be accessed.
+   at FashionNest.Domain.Common.Result`1.get_Value() in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Domain\Common\Result.cs:line 52
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-11-05 14:48:25.706 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The exception handler configured on ExceptionHandlerOptions produced a 404 status response. This InvalidOperationException containing the original exception was thrown since this is often due to a misconfigured ExceptionHandlingPath. If the exception handler is expected to return 404 status responses then set AllowStatusCode404Response to true.
+ ---> System.InvalidOperationException: The value of a failure result can not be accessed.
+   at FashionNest.Domain.Common.Result`1.get_Value() in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Domain\Common\Result.cs:line 52
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-11-05 14:48:33.843 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='3fa85f64-5717-4562-b3fc-2c963f66afa6' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Amount], [p].[CreatedAt], [p].[CreatedBy], [p].[Description], [p].[Method], [p].[PaymentDate], [p].[Status], [p].[UpdatedAt], [p].[UpdatedBy], [p].[UserId]
+FROM [Payments] AS [p]
+WHERE [p].[Id] = @__p_0
+2024-11-05 14:48:34.267 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The value of a failure result can not be accessed.
+   at FashionNest.Domain.Common.Result`1.get_Value() in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Domain\Common\Result.cs:line 52
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-11-05 14:48:34.463 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The exception handler configured on ExceptionHandlerOptions produced a 404 status response. This InvalidOperationException containing the original exception was thrown since this is often due to a misconfigured ExceptionHandlingPath. If the exception handler is expected to return 404 status responses then set AllowStatusCode404Response to true.
+ ---> System.InvalidOperationException: The value of a failure result can not be accessed.
+   at FashionNest.Domain.Common.Result`1.get_Value() in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Domain\Common\Result.cs:line 52
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-11-05 14:51:48.477 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='3fa85f64-5717-4562-b3fc-2c963f66afa6' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Amount], [p].[CreatedAt], [p].[CreatedBy], [p].[Description], [p].[Method], [p].[PaymentDate], [p].[Status], [p].[UpdatedAt], [p].[UpdatedBy], [p].[UserId]
+FROM [Payments] AS [p]
+WHERE [p].[Id] = @__p_0
+2024-11-05 14:57:07.548 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-11-05 14:57:07.638 +07:00 [WRN] The 'OrderStatus' property 'Status' on entity type 'Order' is configured with a database-generated default, but has no configured sentinel value. The database-generated default will always be used for inserts when the property has the value '0', since this is the CLR default for the 'OrderStatus' type. Consider using a nullable type, using a nullable backing field, or setting the sentinel value for the property to ensure the database default is used when, and only when, appropriate. See https://aka.ms/efcore-docs-default-values for more information.
+2024-11-05 14:57:08.338 +07:00 [INF] Executed DbCommand (44ms) [Parameters=[@__p_0='5c8061f6-0363-431e-beeb-3e2437da45a6' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[CreatedBy], [c].[Description], [c].[Name], [c].[UpdatedAt], [c].[UpdatedBy]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0
+2024-11-05 14:57:08.564 +07:00 [INF] Executed DbCommand (8ms) [Parameters=[@p0='3e32704d-c55e-4ba9-835a-d6e8c6670c6f', @p1='5c8061f6-0363-431e-beeb-3e2437da45a6', @p2=NULL (DbType = DateTime2), @p3=NULL (Size = 4000), @p4='High-quality leather jacket, perfect for winter.' (Size = 4000), @p5='https://example.com/images/leather-jacket.jpg' (Size = 4000), @p6='True', @p7='Leather Jacket' (Nullable = false) (Size = 4000), @p8='129.99' (Precision = 18) (Scale = 2), @p9='25', @p10=NULL (DbType = DateTime2), @p11=NULL (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Products] ([Id], [CategoryId], [CreatedAt], [CreatedBy], [Description], [Image], [IsRental], [Name], [Price], [Stock], [UpdatedAt], [UpdatedBy])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+2024-11-05 14:57:25.156 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='d2020a52-96ba-4a1a-97fb-8c1e1d9bef3a' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[CreatedBy], [c].[Description], [c].[Name], [c].[UpdatedAt], [c].[UpdatedBy]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0
+2024-11-05 14:57:25.162 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='9855a285-5328-42eb-90cb-0b5db95f0658', @p1='d2020a52-96ba-4a1a-97fb-8c1e1d9bef3a', @p2=NULL (DbType = DateTime2), @p3=NULL (Size = 4000), @p4='Stylish denim jeans with a comfortable fit.' (Size = 4000), @p5='https://example.com/images/denim-jeans.jpg' (Size = 4000), @p6='False', @p7='Denim Jeans' (Nullable = false) (Size = 4000), @p8='69.99' (Precision = 18) (Scale = 2), @p9='50', @p10=NULL (DbType = DateTime2), @p11=NULL (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Products] ([Id], [CategoryId], [CreatedAt], [CreatedBy], [Description], [Image], [IsRental], [Name], [Price], [Stock], [UpdatedAt], [UpdatedBy])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+2024-11-05 14:57:55.451 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='5c8061f6-0363-431e-beeb-3e2437da45a6' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[CreatedBy], [c].[Description], [c].[Name], [c].[UpdatedAt], [c].[UpdatedBy]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0
+2024-11-05 14:57:55.460 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='e84ed45c-3cb7-44cb-b4e4-a271e205822e', @p1='5c8061f6-0363-431e-beeb-3e2437da45a6', @p2=NULL (DbType = DateTime2), @p3=NULL (Size = 4000), @p4='Áo khoác da chất lượng cao, hoàn hảo cho mùa đông.' (Size = 4000), @p5='https://example.com/images/leather-jacket.jpg' (Size = 4000), @p6='True', @p7='Áo khoác da' (Nullable = false) (Size = 4000), @p8='2999000' (Precision = 18) (Scale = 2), @p9='25', @p10=NULL (DbType = DateTime2), @p11=NULL (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Products] ([Id], [CategoryId], [CreatedAt], [CreatedBy], [Description], [Image], [IsRental], [Name], [Price], [Stock], [UpdatedAt], [UpdatedBy])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+2024-11-05 14:58:08.419 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='5c8061f6-0363-431e-beeb-3e2437da45a6' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[CreatedBy], [c].[Description], [c].[Name], [c].[UpdatedAt], [c].[UpdatedBy]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0
+2024-11-05 14:58:08.429 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='56a70bcc-3e49-4bb2-8bd2-bbfd69ba30d3', @p1='5c8061f6-0363-431e-beeb-3e2437da45a6', @p2=NULL (DbType = DateTime2), @p3=NULL (Size = 4000), @p4='Áo sơ mi cổ điển, phù hợp cho môi trường công sở.' (Size = 4000), @p5='https://example.com/images/formal-shirt.jpg' (Size = 4000), @p6='True', @p7='Áo sơ mi' (Nullable = false) (Size = 4000), @p8='1199000' (Precision = 18) (Scale = 2), @p9='30', @p10=NULL (DbType = DateTime2), @p11=NULL (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Products] ([Id], [CategoryId], [CreatedAt], [CreatedBy], [Description], [Image], [IsRental], [Name], [Price], [Stock], [UpdatedAt], [UpdatedBy])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+2024-11-05 14:59:54.638 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-11-05 14:59:54.719 +07:00 [WRN] The 'OrderStatus' property 'Status' on entity type 'Order' is configured with a database-generated default, but has no configured sentinel value. The database-generated default will always be used for inserts when the property has the value '0', since this is the CLR default for the 'OrderStatus' type. Consider using a nullable type, using a nullable backing field, or setting the sentinel value for the property to ensure the database default is used when, and only when, appropriate. See https://aka.ms/efcore-docs-default-values for more information.
+2024-11-05 14:59:55.289 +07:00 [INF] Executed DbCommand (36ms) [Parameters=[@p0='9aa9757d-1f7d-49d2-bc54-6417a4a32ca9', @p1=NULL (DbType = Guid), @p2=NULL (DbType = DateTime2), @p3=NULL (Size = 4000), @p4='2024-11-05T07:59:54.7868215Z', @p5=NULL (DbType = Guid), @p6='Draft' (Nullable = false) (Size = 4000), @p7='500000.00' (Precision = 18) (Scale = 2), @p8=NULL (DbType = DateTime2), @p9=NULL (Size = 4000), @p10='fc749758-d546-4bd2-bf96-8089e5206568', @p11='8e975420-eebc-4544-a806-5073d58eb7a0', @p12=NULL (DbType = DateTime2), @p13=NULL (Size = 4000), @p14='9aa9757d-1f7d-49d2-bc54-6417a4a32ca9', @p15='500000.00' (Precision = 18) (Scale = 2), @p16='9855a285-5328-42eb-90cb-0b5db95f0658', @p17='1', @p18=NULL (DbType = DateTime2), @p19=NULL (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Orders] ([Id], [CouponId], [CreatedAt], [CreatedBy], [OrderDate], [PaymentId], [Status], [TotalPrice], [UpdatedAt], [UpdatedBy], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+INSERT INTO [OrderItems] ([Id], [CreatedAt], [CreatedBy], [OrderId], [Price], [ProductId], [Quantity], [UpdatedAt], [UpdatedBy])
+VALUES (@p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19);
+2024-11-05 15:00:34.643 +07:00 [INF] Executed DbCommand (10ms) [Parameters=[@p0='48d9ede2-ee10-4c27-9efe-63712723b89f', @p1=NULL (DbType = Guid), @p2=NULL (DbType = DateTime2), @p3=NULL (Size = 4000), @p4='2024-11-05T08:00:34.6266001Z', @p5=NULL (DbType = Guid), @p6='Draft' (Nullable = false) (Size = 4000), @p7='450000.00' (Precision = 18) (Scale = 2), @p8=NULL (DbType = DateTime2), @p9=NULL (Size = 4000), @p10='fc749758-d546-4bd2-bf96-8089e5206568', @p11='35195efd-78c3-486f-80f5-2be877390bdf', @p12=NULL (DbType = DateTime2), @p13=NULL (Size = 4000), @p14='48d9ede2-ee10-4c27-9efe-63712723b89f', @p15='300000.00' (Precision = 18) (Scale = 2), @p16='e84ed45c-3cb7-44cb-b4e4-a271e205822e', @p17='1', @p18=NULL (DbType = DateTime2), @p19=NULL (Size = 4000), @p20='864e7676-b47c-41c5-b98e-bb5ab77817e6', @p21=NULL (DbType = DateTime2), @p22=NULL (Size = 4000), @p23='48d9ede2-ee10-4c27-9efe-63712723b89f', @p24='150000.00' (Precision = 18) (Scale = 2), @p25='56a70bcc-3e49-4bb2-8bd2-bbfd69ba30d3', @p26='1', @p27=NULL (DbType = DateTime2), @p28=NULL (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Orders] ([Id], [CouponId], [CreatedAt], [CreatedBy], [OrderDate], [PaymentId], [Status], [TotalPrice], [UpdatedAt], [UpdatedBy], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+INSERT INTO [OrderItems] ([Id], [CreatedAt], [CreatedBy], [OrderId], [Price], [ProductId], [Quantity], [UpdatedAt], [UpdatedBy])
+VALUES (@p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19),
+(@p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27, @p28);
+2024-11-05 15:02:03.023 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='34baed12-1bd0-4fea-8cc6-2a7413c1f71c', @p1='450000.00' (Precision = 18) (Scale = 2), @p2=NULL (Size = 4000), @p3='Payment for order' (Size = 4000), @p4='VNPay' (Size = 4000), @p5='2024-11-05T08:02:02.9825068Z', @p6='Pending' (Size = 4000), @p7=NULL (DbType = DateTime2), @p8=NULL (Size = 4000), @p9='fc749758-d546-4bd2-bf96-8089e5206568'], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payments] ([Id], [Amount], [CreatedBy], [Description], [Method], [PaymentDate], [Status], [UpdatedAt], [UpdatedBy], [UserId])
+OUTPUT INSERTED.[CreatedAt]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+2024-11-05 15:04:04.947 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='34baed12-1bd0-4fea-8cc6-2a7413c1f71c' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Amount], [p].[CreatedAt], [p].[CreatedBy], [p].[Description], [p].[Method], [p].[PaymentDate], [p].[Status], [p].[UpdatedAt], [p].[UpdatedBy], [p].[UserId]
+FROM [Payments] AS [p]
+WHERE [p].[Id] = @__p_0
+2024-11-05 15:04:04.971 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@p10='34baed12-1bd0-4fea-8cc6-2a7413c1f71c', @p0='450000.00' (Precision = 18) (Scale = 2), @p1='2024-09-28T21:45:22.2392439', @p2=NULL (Size = 4000), @p3='Payment for order' (Size = 4000), @p4='VNPay' (Size = 4000), @p5='2024-11-05T08:02:02.9825068', @p6='Cancelled' (Size = 4000), @p7=NULL (DbType = DateTime2), @p8=NULL (Size = 4000), @p9='fc749758-d546-4bd2-bf96-8089e5206568'], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Payments] SET [Amount] = @p0, [CreatedAt] = @p1, [CreatedBy] = @p2, [Description] = @p3, [Method] = @p4, [PaymentDate] = @p5, [Status] = @p6, [UpdatedAt] = @p7, [UpdatedBy] = @p8, [UserId] = @p9
+OUTPUT 1
+WHERE [Id] = @p10;
+2024-11-05 15:04:34.501 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='6f2295ad-3293-4a59-9d4f-347a93bdf5fc', @p1='450000.00' (Precision = 18) (Scale = 2), @p2=NULL (Size = 4000), @p3='Payment for order' (Size = 4000), @p4='VNPay' (Size = 4000), @p5='2024-11-05T08:04:34.4961060Z', @p6='Pending' (Size = 4000), @p7=NULL (DbType = DateTime2), @p8=NULL (Size = 4000), @p9='fc749758-d546-4bd2-bf96-8089e5206568'], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payments] ([Id], [Amount], [CreatedBy], [Description], [Method], [PaymentDate], [Status], [UpdatedAt], [UpdatedBy], [UserId])
+OUTPUT INSERTED.[CreatedAt]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+2024-11-05 15:05:25.297 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='6f2295ad-3293-4a59-9d4f-347a93bdf5fc' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Amount], [p].[CreatedAt], [p].[CreatedBy], [p].[Description], [p].[Method], [p].[PaymentDate], [p].[Status], [p].[UpdatedAt], [p].[UpdatedBy], [p].[UserId]
+FROM [Payments] AS [p]
+WHERE [p].[Id] = @__p_0
+2024-11-05 15:05:25.304 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@p10='6f2295ad-3293-4a59-9d4f-347a93bdf5fc', @p0='450000.00' (Precision = 18) (Scale = 2), @p1='2024-09-28T21:45:22.2392439', @p2=NULL (Size = 4000), @p3='Payment for order' (Size = 4000), @p4='VNPay' (Size = 4000), @p5='2024-11-05T08:04:34.4961060', @p6='Completed' (Size = 4000), @p7=NULL (DbType = DateTime2), @p8=NULL (Size = 4000), @p9='fc749758-d546-4bd2-bf96-8089e5206568'], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Payments] SET [Amount] = @p0, [CreatedAt] = @p1, [CreatedBy] = @p2, [Description] = @p3, [Method] = @p4, [PaymentDate] = @p5, [Status] = @p6, [UpdatedAt] = @p7, [UpdatedBy] = @p8, [UserId] = @p9
+OUTPUT 1
+WHERE [Id] = @p10;
+2024-11-05 15:05:25.315 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='48d9ede2-ee10-4c27-9efe-63712723b89f' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CouponId], [o].[CreatedAt], [o].[CreatedBy], [o].[OrderDate], [o].[PaymentId], [o].[Status], [o].[TotalPrice], [o].[UpdatedAt], [o].[UpdatedBy], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Id] = @__p_0
+2024-11-05 15:05:25.331 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@p10='48d9ede2-ee10-4c27-9efe-63712723b89f', @p0=NULL (DbType = Guid), @p1=NULL (DbType = DateTime2), @p2=NULL (Size = 4000), @p3='2024-11-05T08:00:34.6266001', @p4='6f2295ad-3293-4a59-9d4f-347a93bdf5fc' (Nullable = true), @p5='Draft' (Nullable = false) (Size = 4000), @p6='0' (Precision = 18) (Scale = 2), @p7=NULL (DbType = DateTime2), @p8=NULL (Size = 4000), @p9='fc749758-d546-4bd2-bf96-8089e5206568'], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Orders] SET [CouponId] = @p0, [CreatedAt] = @p1, [CreatedBy] = @p2, [OrderDate] = @p3, [PaymentId] = @p4, [Status] = @p5, [TotalPrice] = @p6, [UpdatedAt] = @p7, [UpdatedBy] = @p8, [UserId] = @p9
+OUTPUT 1
+WHERE [Id] = @p10;
+2024-11-05 15:11:15.744 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-11-05 15:11:15.828 +07:00 [WRN] The 'OrderStatus' property 'Status' on entity type 'Order' is configured with a database-generated default, but has no configured sentinel value. The database-generated default will always be used for inserts when the property has the value '0', since this is the CLR default for the 'OrderStatus' type. Consider using a nullable type, using a nullable backing field, or setting the sentinel value for the property to ensure the database default is used when, and only when, appropriate. See https://aka.ms/efcore-docs-default-values for more information.
+2024-11-05 15:11:16.464 +07:00 [INF] Executed DbCommand (37ms) [Parameters=[@p0='b2b41d77-da1c-424d-8749-03f23c910ea3', @p1=NULL (DbType = Guid), @p2=NULL (DbType = DateTime2), @p3=NULL (Size = 4000), @p4='2024-11-05T08:11:15.8966835Z', @p5=NULL (DbType = Guid), @p6='Draft' (Nullable = false) (Size = 4000), @p7='100000.00' (Precision = 18) (Scale = 2), @p8=NULL (DbType = DateTime2), @p9=NULL (Size = 4000), @p10='fc749758-d546-4bd2-bf96-8089e5206568', @p11='911b08f4-dbd0-44aa-9edf-3776b553f808', @p12=NULL (DbType = DateTime2), @p13=NULL (Size = 4000), @p14='b2b41d77-da1c-424d-8749-03f23c910ea3', @p15='100000.00' (Precision = 18) (Scale = 2), @p16='3e32704d-c55e-4ba9-835a-d6e8c6670c6f', @p17='1', @p18=NULL (DbType = DateTime2), @p19=NULL (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Orders] ([Id], [CouponId], [CreatedAt], [CreatedBy], [OrderDate], [PaymentId], [Status], [TotalPrice], [UpdatedAt], [UpdatedBy], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+INSERT INTO [OrderItems] ([Id], [CreatedAt], [CreatedBy], [OrderId], [Price], [ProductId], [Quantity], [UpdatedAt], [UpdatedBy])
+VALUES (@p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19);
+2024-11-05 15:11:38.082 +07:00 [INF] Executed DbCommand (13ms) [Parameters=[@p0='dc9c258f-1ffb-423a-9ee8-18ca53382003', @p1='100000.00' (Precision = 18) (Scale = 2), @p2=NULL (Size = 4000), @p3='Payment for order' (Size = 4000), @p4='VNPay' (Size = 4000), @p5='2024-11-05T08:11:38.0247581Z', @p6='Pending' (Size = 4000), @p7=NULL (DbType = DateTime2), @p8=NULL (Size = 4000), @p9='fc749758-d546-4bd2-bf96-8089e5206568'], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payments] ([Id], [Amount], [CreatedBy], [Description], [Method], [PaymentDate], [Status], [UpdatedAt], [UpdatedBy], [UserId])
+OUTPUT INSERTED.[CreatedAt]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+2024-11-05 15:12:24.812 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='dc9c258f-1ffb-423a-9ee8-18ca53382003' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Amount], [p].[CreatedAt], [p].[CreatedBy], [p].[Description], [p].[Method], [p].[PaymentDate], [p].[Status], [p].[UpdatedAt], [p].[UpdatedBy], [p].[UserId]
+FROM [Payments] AS [p]
+WHERE [p].[Id] = @__p_0
+2024-11-05 15:12:24.845 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@p10='dc9c258f-1ffb-423a-9ee8-18ca53382003', @p0='100000.00' (Precision = 18) (Scale = 2), @p1='2024-09-28T21:45:22.2392439', @p2=NULL (Size = 4000), @p3='Payment for order' (Size = 4000), @p4='VNPay' (Size = 4000), @p5='2024-11-05T08:11:38.0247581', @p6='Completed' (Size = 4000), @p7=NULL (DbType = DateTime2), @p8=NULL (Size = 4000), @p9='fc749758-d546-4bd2-bf96-8089e5206568'], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Payments] SET [Amount] = @p0, [CreatedAt] = @p1, [CreatedBy] = @p2, [Description] = @p3, [Method] = @p4, [PaymentDate] = @p5, [Status] = @p6, [UpdatedAt] = @p7, [UpdatedBy] = @p8, [UserId] = @p9
+OUTPUT 1
+WHERE [Id] = @p10;
+2024-11-05 15:12:24.862 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='b2b41d77-da1c-424d-8749-03f23c910ea3' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CouponId], [o].[CreatedAt], [o].[CreatedBy], [o].[OrderDate], [o].[PaymentId], [o].[Status], [o].[TotalPrice], [o].[UpdatedAt], [o].[UpdatedBy], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Id] = @__p_0
+2024-11-05 15:12:24.883 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@p10='b2b41d77-da1c-424d-8749-03f23c910ea3', @p0=NULL (DbType = Guid), @p1=NULL (DbType = DateTime2), @p2=NULL (Size = 4000), @p3='2024-11-05T08:11:15.8966835', @p4='dc9c258f-1ffb-423a-9ee8-18ca53382003' (Nullable = true), @p5='Draft' (Nullable = false) (Size = 4000), @p6='0' (Precision = 18) (Scale = 2), @p7=NULL (DbType = DateTime2), @p8=NULL (Size = 4000), @p9='fc749758-d546-4bd2-bf96-8089e5206568'], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Orders] SET [CouponId] = @p0, [CreatedAt] = @p1, [CreatedBy] = @p2, [OrderDate] = @p3, [PaymentId] = @p4, [Status] = @p5, [TotalPrice] = @p6, [UpdatedAt] = @p7, [UpdatedBy] = @p8, [UserId] = @p9
+OUTPUT 1
+WHERE [Id] = @p10;
+2024-11-05 15:19:05.860 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-11-05 15:19:05.957 +07:00 [WRN] The 'OrderStatus' property 'Status' on entity type 'Order' is configured with a database-generated default, but has no configured sentinel value. The database-generated default will always be used for inserts when the property has the value '0', since this is the CLR default for the 'OrderStatus' type. Consider using a nullable type, using a nullable backing field, or setting the sentinel value for the property to ensure the database default is used when, and only when, appropriate. See https://aka.ms/efcore-docs-default-values for more information.
+2024-11-05 15:19:06.668 +07:00 [INF] Executed DbCommand (42ms) [Parameters=[@p0='a014eebc-ed1d-437f-b698-badeb80d82bc', @p1=NULL (DbType = Guid), @p2=NULL (DbType = DateTime2), @p3=NULL (Size = 4000), @p4='2024-11-05T08:19:06.0343591Z', @p5=NULL (DbType = Guid), @p6='Draft' (Nullable = false) (Size = 4000), @p7='150000.00' (Precision = 18) (Scale = 2), @p8=NULL (DbType = DateTime2), @p9=NULL (Size = 4000), @p10='fc749758-d546-4bd2-bf96-8089e5206568', @p11='fa8481a6-71f2-4bba-a0c5-6bf9bb29a361', @p12=NULL (DbType = DateTime2), @p13=NULL (Size = 4000), @p14='a014eebc-ed1d-437f-b698-badeb80d82bc', @p15='150000.00' (Precision = 18) (Scale = 2), @p16='56a70bcc-3e49-4bb2-8bd2-bbfd69ba30d3', @p17='1', @p18=NULL (DbType = DateTime2), @p19=NULL (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Orders] ([Id], [CouponId], [CreatedAt], [CreatedBy], [OrderDate], [PaymentId], [Status], [TotalPrice], [UpdatedAt], [UpdatedBy], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+INSERT INTO [OrderItems] ([Id], [CreatedAt], [CreatedBy], [OrderId], [Price], [ProductId], [Quantity], [UpdatedAt], [UpdatedBy])
+VALUES (@p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19);
+2024-11-05 15:20:01.835 +07:00 [INF] Executed DbCommand (14ms) [Parameters=[@p0='080987d8-f9df-4e8d-add1-88bccbb2d47c', @p1='150000.00' (Precision = 18) (Scale = 2), @p2=NULL (Size = 4000), @p3='Payment for order' (Size = 4000), @p4='VNPay' (Size = 4000), @p5='2024-11-05T08:20:01.7622147Z', @p6='Pending' (Size = 4000), @p7=NULL (DbType = DateTime2), @p8=NULL (Size = 4000), @p9='fc749758-d546-4bd2-bf96-8089e5206568'], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payments] ([Id], [Amount], [CreatedBy], [Description], [Method], [PaymentDate], [Status], [UpdatedAt], [UpdatedBy], [UserId])
+OUTPUT INSERTED.[CreatedAt]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+2024-11-05 15:20:42.702 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='080987d8-f9df-4e8d-add1-88bccbb2d47c' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Amount], [p].[CreatedAt], [p].[CreatedBy], [p].[Description], [p].[Method], [p].[PaymentDate], [p].[Status], [p].[UpdatedAt], [p].[UpdatedBy], [p].[UserId]
+FROM [Payments] AS [p]
+WHERE [p].[Id] = @__p_0
+2024-11-05 15:20:42.743 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@p10='080987d8-f9df-4e8d-add1-88bccbb2d47c', @p0='150000.00' (Precision = 18) (Scale = 2), @p1='2024-09-28T21:45:22.2392439', @p2=NULL (Size = 4000), @p3='Payment for order' (Size = 4000), @p4='VNPay' (Size = 4000), @p5='2024-11-05T08:20:01.7622147', @p6='Completed' (Size = 4000), @p7=NULL (DbType = DateTime2), @p8=NULL (Size = 4000), @p9='fc749758-d546-4bd2-bf96-8089e5206568'], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Payments] SET [Amount] = @p0, [CreatedAt] = @p1, [CreatedBy] = @p2, [Description] = @p3, [Method] = @p4, [PaymentDate] = @p5, [Status] = @p6, [UpdatedAt] = @p7, [UpdatedBy] = @p8, [UserId] = @p9
+OUTPUT 1
+WHERE [Id] = @p10;
+2024-11-05 15:20:42.767 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='a014eebc-ed1d-437f-b698-badeb80d82bc' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CouponId], [o].[CreatedAt], [o].[CreatedBy], [o].[OrderDate], [o].[PaymentId], [o].[Status], [o].[TotalPrice], [o].[UpdatedAt], [o].[UpdatedBy], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Id] = @__p_0
+2024-11-05 15:20:42.795 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@p10='a014eebc-ed1d-437f-b698-badeb80d82bc', @p0=NULL (DbType = Guid), @p1=NULL (DbType = DateTime2), @p2=NULL (Size = 4000), @p3='2024-11-05T08:19:06.0343591', @p4='080987d8-f9df-4e8d-add1-88bccbb2d47c' (Nullable = true), @p5='Draft' (Nullable = false) (Size = 4000), @p6='150000.00' (Precision = 18) (Scale = 2), @p7=NULL (DbType = DateTime2), @p8=NULL (Size = 4000), @p9='fc749758-d546-4bd2-bf96-8089e5206568'], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Orders] SET [CouponId] = @p0, [CreatedAt] = @p1, [CreatedBy] = @p2, [OrderDate] = @p3, [PaymentId] = @p4, [Status] = @p5, [TotalPrice] = @p6, [UpdatedAt] = @p7, [UpdatedBy] = @p8, [UserId] = @p9
+OUTPUT 1
+WHERE [Id] = @p10;
+2024-11-05 15:21:21.141 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='a014eebc-ed1d-437f-b698-badeb80d82bc' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CouponId], [o].[CreatedAt], [o].[CreatedBy], [o].[OrderDate], [o].[PaymentId], [o].[Status], [o].[TotalPrice], [o].[UpdatedAt], [o].[UpdatedBy], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Id] = @__p_0
+2024-11-05 15:21:21.847 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentException: The key value at position 0 of the call to 'DbSet<Payment>.Find' was of type 'Guid', which does not match the property type of 'PaymentId'.
+   at Microsoft.EntityFrameworkCore.Internal.EntityFinder`1.FindTracked(Object[] keyValues)
+   at Microsoft.EntityFrameworkCore.Internal.EntityFinder`1.FindAsync(Object[] keyValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.FindAsync(Object[] keyValues)
+   at FashionNest.Application.Repositories.GenericRepository`1.GetByIdAsync(Object id) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Infrastructure\Repositories\GenericRepository.cs:line 51
+   at FashionNest.Application.Features.Orders.Commands.UpdateOrder.UpdateOrderCommandHandler.Handle(UpdateOrderCommand request, CancellationToken cancellationToken) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Application\Features\Orders\Commands\UpdateOrder\UpdateOrderCommandHandler.cs:line 26
+   at FashionNest.API.Controllers.OrderController.Update(UpdateOrderCommand request) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.API\Controllers\OrderController.cs:line 44
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-11-05 15:21:22.134 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The exception handler configured on ExceptionHandlerOptions produced a 404 status response. This InvalidOperationException containing the original exception was thrown since this is often due to a misconfigured ExceptionHandlingPath. If the exception handler is expected to return 404 status responses then set AllowStatusCode404Response to true.
+ ---> System.ArgumentException: The key value at position 0 of the call to 'DbSet<Payment>.Find' was of type 'Guid', which does not match the property type of 'PaymentId'.
+   at Microsoft.EntityFrameworkCore.Internal.EntityFinder`1.FindTracked(Object[] keyValues)
+   at Microsoft.EntityFrameworkCore.Internal.EntityFinder`1.FindAsync(Object[] keyValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.FindAsync(Object[] keyValues)
+   at FashionNest.Application.Repositories.GenericRepository`1.GetByIdAsync(Object id) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Infrastructure\Repositories\GenericRepository.cs:line 51
+   at FashionNest.Application.Features.Orders.Commands.UpdateOrder.UpdateOrderCommandHandler.Handle(UpdateOrderCommand request, CancellationToken cancellationToken) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Application\Features\Orders\Commands\UpdateOrder\UpdateOrderCommandHandler.cs:line 26
+   at FashionNest.API.Controllers.OrderController.Update(UpdateOrderCommand request) in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.API\Controllers\OrderController.cs:line 44
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-11-05 15:23:23.285 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-11-05 15:23:23.376 +07:00 [WRN] The 'OrderStatus' property 'Status' on entity type 'Order' is configured with a database-generated default, but has no configured sentinel value. The database-generated default will always be used for inserts when the property has the value '0', since this is the CLR default for the 'OrderStatus' type. Consider using a nullable type, using a nullable backing field, or setting the sentinel value for the property to ensure the database default is used when, and only when, appropriate. See https://aka.ms/efcore-docs-default-values for more information.
+2024-11-05 15:23:24.185 +07:00 [INF] Executed DbCommand (46ms) [Parameters=[@__p_0='a014eebc-ed1d-437f-b698-badeb80d82bc' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CouponId], [o].[CreatedAt], [o].[CreatedBy], [o].[OrderDate], [o].[PaymentId], [o].[Status], [o].[TotalPrice], [o].[UpdatedAt], [o].[UpdatedBy], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Id] = @__p_0
+2024-11-05 15:23:24.393 +07:00 [INF] Executed DbCommand (9ms) [Parameters=[@p10='a014eebc-ed1d-437f-b698-badeb80d82bc', @p0=NULL (DbType = Guid), @p1=NULL (DbType = DateTime2), @p2=NULL (Size = 4000), @p3='2024-11-05T08:19:06.0343591', @p4='080987d8-f9df-4e8d-add1-88bccbb2d47c' (Nullable = true), @p5='Completed' (Nullable = false) (Size = 4000), @p6='150000.00' (Precision = 18) (Scale = 2), @p7=NULL (DbType = DateTime2), @p8=NULL (Size = 4000), @p9='fc749758-d546-4bd2-bf96-8089e5206568'], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Orders] SET [CouponId] = @p0, [CreatedAt] = @p1, [CreatedBy] = @p2, [OrderDate] = @p3, [PaymentId] = @p4, [Status] = @p5, [TotalPrice] = @p6, [UpdatedAt] = @p7, [UpdatedBy] = @p8, [UserId] = @p9
+OUTPUT 1
+WHERE [Id] = @p10;
+2024-11-05 23:50:09.924 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-11-05 23:50:09.991 +07:00 [WRN] The 'OrderStatus' property 'Status' on entity type 'Order' is configured with a database-generated default, but has no configured sentinel value. The database-generated default will always be used for inserts when the property has the value '0', since this is the CLR default for the 'OrderStatus' type. Consider using a nullable type, using a nullable backing field, or setting the sentinel value for the property to ensure the database default is used when, and only when, appropriate. See https://aka.ms/efcore-docs-default-values for more information.
+2024-11-05 23:50:18.113 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-11-05 23:50:18.174 +07:00 [WRN] The 'OrderStatus' property 'Status' on entity type 'Order' is configured with a database-generated default, but has no configured sentinel value. The database-generated default will always be used for inserts when the property has the value '0', since this is the CLR default for the 'OrderStatus' type. Consider using a nullable type, using a nullable backing field, or setting the sentinel value for the property to ensure the database default is used when, and only when, appropriate. See https://aka.ms/efcore-docs-default-values for more information.
+2024-11-05 23:50:18.478 +07:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-11-05 23:50:18.484 +07:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2024-11-05 23:50:18.497 +07:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2024-11-05 23:50:18.499 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-11-05 23:50:18.500 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-11-05 23:50:18.507 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-11-05 23:50:18.516 +07:00 [INF] Applying migration '20241105165010_UpdateEntityBase'.
+2024-11-05 23:50:18.597 +07:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @var0 sysname;
+SELECT @var0 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Users]') AND [c].[name] = N'CreatedBy');
+IF @var0 IS NOT NULL EXEC(N'ALTER TABLE [Users] DROP CONSTRAINT [' + @var0 + '];');
+ALTER TABLE [Users] DROP COLUMN [CreatedBy];
+2024-11-05 23:50:18.607 +07:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @var1 sysname;
+SELECT @var1 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Users]') AND [c].[name] = N'UpdatedBy');
+IF @var1 IS NOT NULL EXEC(N'ALTER TABLE [Users] DROP CONSTRAINT [' + @var1 + '];');
+ALTER TABLE [Users] DROP COLUMN [UpdatedBy];
+2024-11-05 23:50:18.617 +07:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @var2 sysname;
+SELECT @var2 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Roles]') AND [c].[name] = N'CreatedBy');
+IF @var2 IS NOT NULL EXEC(N'ALTER TABLE [Roles] DROP CONSTRAINT [' + @var2 + '];');
+ALTER TABLE [Roles] DROP COLUMN [CreatedBy];
+2024-11-05 23:50:18.627 +07:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @var3 sysname;
+SELECT @var3 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Roles]') AND [c].[name] = N'UpdatedBy');
+IF @var3 IS NOT NULL EXEC(N'ALTER TABLE [Roles] DROP CONSTRAINT [' + @var3 + '];');
+ALTER TABLE [Roles] DROP COLUMN [UpdatedBy];
+2024-11-05 23:50:18.636 +07:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @var4 sysname;
+SELECT @var4 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Products]') AND [c].[name] = N'CreatedBy');
+IF @var4 IS NOT NULL EXEC(N'ALTER TABLE [Products] DROP CONSTRAINT [' + @var4 + '];');
+ALTER TABLE [Products] DROP COLUMN [CreatedBy];
+2024-11-05 23:50:18.647 +07:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @var5 sysname;
+SELECT @var5 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Products]') AND [c].[name] = N'UpdatedBy');
+IF @var5 IS NOT NULL EXEC(N'ALTER TABLE [Products] DROP CONSTRAINT [' + @var5 + '];');
+ALTER TABLE [Products] DROP COLUMN [UpdatedBy];
+2024-11-05 23:50:18.656 +07:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @var6 sysname;
+SELECT @var6 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Payments]') AND [c].[name] = N'CreatedBy');
+IF @var6 IS NOT NULL EXEC(N'ALTER TABLE [Payments] DROP CONSTRAINT [' + @var6 + '];');
+ALTER TABLE [Payments] DROP COLUMN [CreatedBy];
+2024-11-05 23:50:19.113 +07:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @var7 sysname;
+SELECT @var7 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Payments]') AND [c].[name] = N'UpdatedBy');
+IF @var7 IS NOT NULL EXEC(N'ALTER TABLE [Payments] DROP CONSTRAINT [' + @var7 + '];');
+ALTER TABLE [Payments] DROP COLUMN [UpdatedBy];
+2024-11-05 23:50:19.136 +07:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @var8 sysname;
+SELECT @var8 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Orders]') AND [c].[name] = N'CreatedBy');
+IF @var8 IS NOT NULL EXEC(N'ALTER TABLE [Orders] DROP CONSTRAINT [' + @var8 + '];');
+ALTER TABLE [Orders] DROP COLUMN [CreatedBy];
+2024-11-05 23:50:19.148 +07:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @var9 sysname;
+SELECT @var9 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Orders]') AND [c].[name] = N'UpdatedBy');
+IF @var9 IS NOT NULL EXEC(N'ALTER TABLE [Orders] DROP CONSTRAINT [' + @var9 + '];');
+ALTER TABLE [Orders] DROP COLUMN [UpdatedBy];
+2024-11-05 23:50:19.159 +07:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @var10 sysname;
+SELECT @var10 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[OrderItems]') AND [c].[name] = N'CreatedBy');
+IF @var10 IS NOT NULL EXEC(N'ALTER TABLE [OrderItems] DROP CONSTRAINT [' + @var10 + '];');
+ALTER TABLE [OrderItems] DROP COLUMN [CreatedBy];
+2024-11-05 23:50:19.170 +07:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @var11 sysname;
+SELECT @var11 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[OrderItems]') AND [c].[name] = N'UpdatedBy');
+IF @var11 IS NOT NULL EXEC(N'ALTER TABLE [OrderItems] DROP CONSTRAINT [' + @var11 + '];');
+ALTER TABLE [OrderItems] DROP COLUMN [UpdatedBy];
+2024-11-05 23:50:19.179 +07:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @var12 sysname;
+SELECT @var12 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Coupons]') AND [c].[name] = N'CreatedBy');
+IF @var12 IS NOT NULL EXEC(N'ALTER TABLE [Coupons] DROP CONSTRAINT [' + @var12 + '];');
+ALTER TABLE [Coupons] DROP COLUMN [CreatedBy];
+2024-11-05 23:50:19.189 +07:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @var13 sysname;
+SELECT @var13 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Coupons]') AND [c].[name] = N'UpdatedBy');
+IF @var13 IS NOT NULL EXEC(N'ALTER TABLE [Coupons] DROP CONSTRAINT [' + @var13 + '];');
+ALTER TABLE [Coupons] DROP COLUMN [UpdatedBy];
+2024-11-05 23:50:19.611 +07:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @var14 sysname;
+SELECT @var14 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Categories]') AND [c].[name] = N'CreatedBy');
+IF @var14 IS NOT NULL EXEC(N'ALTER TABLE [Categories] DROP CONSTRAINT [' + @var14 + '];');
+ALTER TABLE [Categories] DROP COLUMN [CreatedBy];
+2024-11-05 23:50:19.623 +07:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @var15 sysname;
+SELECT @var15 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Categories]') AND [c].[name] = N'UpdatedBy');
+IF @var15 IS NOT NULL EXEC(N'ALTER TABLE [Categories] DROP CONSTRAINT [' + @var15 + '];');
+ALTER TABLE [Categories] DROP COLUMN [UpdatedBy];
+2024-11-05 23:50:19.642 +07:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @var16 sysname;
+SELECT @var16 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Users]') AND [c].[name] = N'CreatedAt');
+IF @var16 IS NOT NULL EXEC(N'ALTER TABLE [Users] DROP CONSTRAINT [' + @var16 + '];');
+UPDATE [Users] SET [CreatedAt] = '0001-01-01T00:00:00.0000000' WHERE [CreatedAt] IS NULL;
+ALTER TABLE [Users] ALTER COLUMN [CreatedAt] datetime2 NOT NULL;
+ALTER TABLE [Users] ADD DEFAULT '0001-01-01T00:00:00.0000000' FOR [CreatedAt];
+2024-11-05 23:50:19.658 +07:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @var17 sysname;
+SELECT @var17 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Roles]') AND [c].[name] = N'CreatedAt');
+IF @var17 IS NOT NULL EXEC(N'ALTER TABLE [Roles] DROP CONSTRAINT [' + @var17 + '];');
+UPDATE [Roles] SET [CreatedAt] = '0001-01-01T00:00:00.0000000' WHERE [CreatedAt] IS NULL;
+ALTER TABLE [Roles] ALTER COLUMN [CreatedAt] datetime2 NOT NULL;
+ALTER TABLE [Roles] ADD DEFAULT '0001-01-01T00:00:00.0000000' FOR [CreatedAt];
+2024-11-05 23:50:19.672 +07:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @var18 sysname;
+SELECT @var18 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Products]') AND [c].[name] = N'CreatedAt');
+IF @var18 IS NOT NULL EXEC(N'ALTER TABLE [Products] DROP CONSTRAINT [' + @var18 + '];');
+UPDATE [Products] SET [CreatedAt] = '0001-01-01T00:00:00.0000000' WHERE [CreatedAt] IS NULL;
+ALTER TABLE [Products] ALTER COLUMN [CreatedAt] datetime2 NOT NULL;
+ALTER TABLE [Products] ADD DEFAULT '0001-01-01T00:00:00.0000000' FOR [CreatedAt];
+2024-11-05 23:50:20.142 +07:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @var19 sysname;
+SELECT @var19 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Payments]') AND [c].[name] = N'CreatedAt');
+IF @var19 IS NOT NULL EXEC(N'ALTER TABLE [Payments] DROP CONSTRAINT [' + @var19 + '];');
+ALTER TABLE [Payments] ADD DEFAULT '2024-11-05T23:50:09.8511375+07:00' FOR [CreatedAt];
+2024-11-05 23:50:20.160 +07:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @var20 sysname;
+SELECT @var20 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Orders]') AND [c].[name] = N'Status');
+IF @var20 IS NOT NULL EXEC(N'ALTER TABLE [Orders] DROP CONSTRAINT [' + @var20 + '];');
+UPDATE [Orders] SET [Status] = N'Draft' WHERE [Status] IS NULL;
+ALTER TABLE [Orders] ALTER COLUMN [Status] nvarchar(max) NOT NULL;
+ALTER TABLE [Orders] ADD DEFAULT N'Draft' FOR [Status];
+2024-11-05 23:50:20.173 +07:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @var21 sysname;
+SELECT @var21 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Orders]') AND [c].[name] = N'CreatedAt');
+IF @var21 IS NOT NULL EXEC(N'ALTER TABLE [Orders] DROP CONSTRAINT [' + @var21 + '];');
+UPDATE [Orders] SET [CreatedAt] = '0001-01-01T00:00:00.0000000' WHERE [CreatedAt] IS NULL;
+ALTER TABLE [Orders] ALTER COLUMN [CreatedAt] datetime2 NOT NULL;
+ALTER TABLE [Orders] ADD DEFAULT '0001-01-01T00:00:00.0000000' FOR [CreatedAt];
+2024-11-05 23:50:20.186 +07:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @var22 sysname;
+SELECT @var22 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[OrderItems]') AND [c].[name] = N'CreatedAt');
+IF @var22 IS NOT NULL EXEC(N'ALTER TABLE [OrderItems] DROP CONSTRAINT [' + @var22 + '];');
+UPDATE [OrderItems] SET [CreatedAt] = '0001-01-01T00:00:00.0000000' WHERE [CreatedAt] IS NULL;
+ALTER TABLE [OrderItems] ALTER COLUMN [CreatedAt] datetime2 NOT NULL;
+ALTER TABLE [OrderItems] ADD DEFAULT '0001-01-01T00:00:00.0000000' FOR [CreatedAt];
+2024-11-05 23:50:20.199 +07:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @var23 sysname;
+SELECT @var23 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Coupons]') AND [c].[name] = N'CreatedAt');
+IF @var23 IS NOT NULL EXEC(N'ALTER TABLE [Coupons] DROP CONSTRAINT [' + @var23 + '];');
+UPDATE [Coupons] SET [CreatedAt] = '0001-01-01T00:00:00.0000000' WHERE [CreatedAt] IS NULL;
+ALTER TABLE [Coupons] ALTER COLUMN [CreatedAt] datetime2 NOT NULL;
+ALTER TABLE [Coupons] ADD DEFAULT '0001-01-01T00:00:00.0000000' FOR [CreatedAt];
+2024-11-05 23:50:20.212 +07:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @var24 sysname;
+SELECT @var24 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Categories]') AND [c].[name] = N'CreatedAt');
+IF @var24 IS NOT NULL EXEC(N'ALTER TABLE [Categories] DROP CONSTRAINT [' + @var24 + '];');
+UPDATE [Categories] SET [CreatedAt] = '0001-01-01T00:00:00.0000000' WHERE [CreatedAt] IS NULL;
+ALTER TABLE [Categories] ALTER COLUMN [CreatedAt] datetime2 NOT NULL;
+ALTER TABLE [Categories] ADD DEFAULT '0001-01-01T00:00:00.0000000' FOR [CreatedAt];
+2024-11-05 23:50:20.460 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20241105165010_UpdateEntityBase', N'9.0.0-rc.1.24451.1');
+2024-11-05 23:50:20.467 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2024-11-05 23:50:50.536 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-11-05 23:50:50.609 +07:00 [WRN] The 'OrderStatus' property 'Status' on entity type 'Order' is configured with a database-generated default, but has no configured sentinel value. The database-generated default will always be used for inserts when the property has the value '0', since this is the CLR default for the 'OrderStatus' type. Consider using a nullable type, using a nullable backing field, or setting the sentinel value for the property to ensure the database default is used when, and only when, appropriate. See https://aka.ms/efcore-docs-default-values for more information.
+2024-11-05 23:50:51.106 +07:00 [INF] Executed DbCommand (38ms) [Parameters=[@p0='fde47745-b694-48bb-be2d-48deaa7f3e1a', @p1='2024-11-05T16:50:50.6731235Z', @p2='Shoes' (Nullable = false) (Size = 4000), @p3='Shoes' (Nullable = false) (Size = 4000), @p4=NULL (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Categories] ([Id], [CreatedAt], [Description], [Name], [UpdatedAt])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2024-11-05 23:52:29.943 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-11-05 23:52:30.023 +07:00 [WRN] The 'OrderStatus' property 'Status' on entity type 'Order' is configured with a database-generated default, but has no configured sentinel value. The database-generated default will always be used for inserts when the property has the value '0', since this is the CLR default for the 'OrderStatus' type. Consider using a nullable type, using a nullable backing field, or setting the sentinel value for the property to ensure the database default is used when, and only when, appropriate. See https://aka.ms/efcore-docs-default-values for more information.
+2024-11-05 23:52:30.553 +07:00 [INF] Executed DbCommand (40ms) [Parameters=[@p0='7a383689-d248-4916-a48e-6b107c7b5042', @p1='2024-11-05T23:52:30.0956474+07:00', @p2='1' (Nullable = false) (Size = 4000), @p3='1' (Nullable = false) (Size = 4000), @p4=NULL (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Categories] ([Id], [CreatedAt], [Description], [Name], [UpdatedAt])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2024-11-05 23:52:55.251 +07:00 [INF] Executed DbCommand (10ms) [Parameters=[@__p_0='7a383689-d248-4916-a48e-6b107c7b5042' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0
+2024-11-05 23:52:55.280 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@p4='7a383689-d248-4916-a48e-6b107c7b5042', @p0='2024-11-05T23:52:30.0956474', @p1='1' (Nullable = false) (Size = 4000), @p2='1' (Nullable = false) (Size = 4000), @p3=NULL (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Categories] SET [CreatedAt] = @p0, [Description] = @p1, [Name] = @p2, [UpdatedAt] = @p3
+OUTPUT 1
+WHERE [Id] = @p4;
+2024-11-05 23:56:07.901 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-11-05 23:56:07.993 +07:00 [WRN] The 'OrderStatus' property 'Status' on entity type 'Order' is configured with a database-generated default, but has no configured sentinel value. The database-generated default will always be used for inserts when the property has the value '0', since this is the CLR default for the 'OrderStatus' type. Consider using a nullable type, using a nullable backing field, or setting the sentinel value for the property to ensure the database default is used when, and only when, appropriate. See https://aka.ms/efcore-docs-default-values for more information.
+2024-11-05 23:56:08.735 +07:00 [INF] Executed DbCommand (49ms) [Parameters=[@__p_0='7a383689-d248-4916-a48e-6b107c7b5042' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0
+2024-11-05 23:56:08.918 +07:00 [INF] Executed DbCommand (7ms) [Parameters=[@p4='7a383689-d248-4916-a48e-6b107c7b5042', @p0='2024-11-05T23:52:30.0956474', @p1='2' (Nullable = false) (Size = 4000), @p2='2' (Nullable = false) (Size = 4000), @p3='2024-11-05T23:56:08.8274533+07:00' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Categories] SET [CreatedAt] = @p0, [Description] = @p1, [Name] = @p2, [UpdatedAt] = @p3
+OUTPUT 1
+WHERE [Id] = @p4;
+2024-11-05 23:59:03.294 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-11-05 23:59:03.378 +07:00 [WRN] The 'OrderStatus' property 'Status' on entity type 'Order' is configured with a database-generated default, but has no configured sentinel value. The database-generated default will always be used for inserts when the property has the value '0', since this is the CLR default for the 'OrderStatus' type. Consider using a nullable type, using a nullable backing field, or setting the sentinel value for the property to ensure the database default is used when, and only when, appropriate. See https://aka.ms/efcore-docs-default-values for more information.
+2024-11-05 23:59:03.963 +07:00 [INF] Executed DbCommand (37ms) [Parameters=[@__p_0='7a383689-d248-4916-a48e-6b107c7b5042' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0
+2024-11-05 23:59:04.050 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[@__request_Name_0='a' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+WHERE [c].[Name] = @__request_Name_0
+2024-11-05 23:59:04.572 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The value of a failure result can not be accessed.
+   at FashionNest.Domain.Common.Result`1.get_Value() in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Domain\Common\Result.cs:line 52
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-11-05 23:59:04.800 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The exception handler configured on ExceptionHandlerOptions produced a 404 status response. This InvalidOperationException containing the original exception was thrown since this is often due to a misconfigured ExceptionHandlingPath. If the exception handler is expected to return 404 status responses then set AllowStatusCode404Response to true.
+ ---> System.InvalidOperationException: The value of a failure result can not be accessed.
+   at FashionNest.Domain.Common.Result`1.get_Value() in D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Domain\Common\Result.cs:line 52
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
