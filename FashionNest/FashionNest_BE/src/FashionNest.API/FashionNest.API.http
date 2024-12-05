@@ -1,0 +1,6 @@
+@FashionNest.API_HostAddress = http://localhost:5215
+
+GET {{FashionNest.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

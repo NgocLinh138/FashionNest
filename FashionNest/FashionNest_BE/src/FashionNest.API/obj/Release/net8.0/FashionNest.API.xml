@@ -1,0 +1,277 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FashionNest.API</name>
+    </assembly>
+    <members>
+        <member name="M:FashionNest.API.Controllers.AuthController.Login(FashionNest.Application.Features.Auth.Queries.Login.LoginUserQuery)">
+            <summary>
+            Login
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FashionNest.API.Controllers.AuthController.Register(FashionNest.Application.Features.Auth.Commands.Register.RegisterUserCommand)">
+            <summary>
+            Register
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FashionNest.API.Controllers.AuthController.ChangePassword(FashionNest.Application.Features.Auth.Commands.ChangePassword.ChangePasswordCommand)">
+            <summary>
+            Change Password
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FashionNest.API.Controllers.CategoryController.GetAll(FashionNest.Application.Features.Categories.Queries.GetCategories.GetCategoriesQuery)">
+            <summary>
+            Get a paginated list of categories.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FashionNest.API.Controllers.CategoryController.GetById(System.Guid)">
+            <summary>
+            Get a specific category by its ID.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FashionNest.API.Controllers.CategoryController.Create(FashionNest.Application.Features.Categories.Commands.CreateCategory.CreateCategoryCommand)">
+            <summary>
+            Create a new category.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FashionNest.API.Controllers.CategoryController.Update(FashionNest.Application.Features.Categories.Commands.UpdateCategory.UpdateCategoryCommand)">
+            <summary>
+            Update an existing category.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FashionNest.API.Controllers.CategoryController.Delete(System.Guid)">
+            <summary>
+            Delete a category by its ID.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FashionNest.API.Controllers.CouponController.GetAll(System.Int32,System.Int32)">
+            <summary>
+            Get a paginated list of all coupons.
+            </summary>
+            <param name="pageIndex">Page index to start from, default is 1.</param>
+            <param name="pageSize">Number of records per page, default is 10.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FashionNest.API.Controllers.CouponController.GetById(System.Guid)">
+            <summary>
+            Get a specific coupon by its ID.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FashionNest.API.Controllers.CouponController.Create(FashionNest.Application.Features.Coupons.Commands.CreateCoupon.CreateCouponCommand)">
+            <summary>
+            Create a new coupon.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FashionNest.API.Controllers.CouponController.Update(FashionNest.Application.Features.Coupons.Commands.UpdateCoupon.UpdateCouponCommand)">
+            <summary>
+            Update an existing coupon.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FashionNest.API.Controllers.CouponController.Delete(System.Guid)">
+            <summary>
+            Delete a coupon by its ID.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FashionNest.API.Controllers.OrderController.GetAll(FashionNest.Application.Features.Orders.Queries.GetOrders.GetOrdersQuery)">
+            <summary>
+            Get a paginated list of all orders.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FashionNest.API.Controllers.OrderController.GetById(System.Guid)">
+            <summary>
+            Get a specific order by its ID.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FashionNest.API.Controllers.OrderController.Create(FashionNest.Application.Features.Orders.Commands.CreateOrder.CreateOrderCommand)">
+            <summary>
+            Create a new order.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FashionNest.API.Controllers.OrderController.Update(FashionNest.Application.Features.Orders.Commands.UpdateOrder.UpdateOrderCommand)">
+            <summary>
+            Update an existing order.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FashionNest.API.Controllers.OrderController.Delete(System.Guid)">
+            <summary>
+            Delete an order by its ID.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FashionNest.API.Controllers.PaymentController.GetAll(System.Int32,System.Int32)">
+            <summary>
+            Get a paginated list of all payments.
+            </summary>
+            <param name="pageIndex">Page index to start from, default is 1.</param>
+            <param name="pageSize">Number of records per page, default is 10.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FashionNest.API.Controllers.PaymentController.GetPaymentById(System.Guid)">
+            <summary>
+            Get payment details by payment ID.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FashionNest.API.Controllers.PaymentController.GetPaymentByUserId(System.Guid)">
+            <summary>
+            Get payments by user ID.
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FashionNest.API.Controllers.PaymentController.Payments(FashionNest.Application.Features.Payments.Commands.VnPay.CreatePaymentVnPay.CreatePaymentVnPayCommand)">
+            <summary>
+            Create a new VnPay payment.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FashionNest.API.Controllers.PaymentController.UpdatePayment(FashionNest.Application.Features.Payments.Commands.VnPay.UpdatePayment.UpdatePaymentCommand)">
+            <summary>
+            Update an existing payment.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FashionNest.API.Controllers.ProductController.GetAll(FashionNest.Application.Features.Products.Queries.GetProducts.GetProductsQuery)">
+            <summary>
+            Get a paginated list of all products.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FashionNest.API.Controllers.ProductController.GetById(System.Guid)">
+            <summary>
+            Get payment details by product ID.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FashionNest.API.Controllers.ProductController.GetProductsByCategoryName(System.String)">
+            <summary>
+            Get product details by category name.
+            </summary>
+            <param name="categoryName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FashionNest.API.Controllers.ProductController.Create(FashionNest.Application.Features.Products.Commands.CreateProduct.CreateProductCommand)">
+            <summary>
+            Create a new product.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FashionNest.API.Controllers.ProductController.Update(FashionNest.Application.Features.Products.Commands.UpdateProduct.UpdateProductCommand)">
+            <summary>
+            Update an existing product.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FashionNest.API.Controllers.ProductController.Delete(System.Guid)">
+            <summary>
+            Delete a product by its ID.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FashionNest.API.Controllers.RoleController.GetAll(System.Int32,System.Int32)">
+            <summary>
+            Get a paginated list of all roles.
+            </summary>
+            <param name="pageIndex">Page index to start from, default is 1.</param>
+            <param name="pageSize">Number of records per page, default is 10.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FashionNest.API.Controllers.RoleController.GetById(System.Guid)">
+            <summary>
+            Get a specific role by its ID.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FashionNest.API.Controllers.RoleController.Create(FashionNest.Application.Features.Roles.Commands.CreateRole.CreateRoleCommand)">
+            <summary>
+            Create a new role.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FashionNest.API.Controllers.RoleController.Update(FashionNest.Application.Features.Roles.Commands.UpdateRole.UpdateRoleCommand)">
+            <summary>
+            Update an existing role.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FashionNest.API.Controllers.RoleController.Delete(System.Guid)">
+            <summary>
+            Delete a role by its ID.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FashionNest.API.Controllers.UserController.GetAll(FashionNest.Application.Features.Users.Queries.GetUsers.GetUsersQuery)">
+            <summary>
+            Get a paginated list of users.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FashionNest.API.Controllers.UserController.GetById(System.Guid)">
+            <summary>
+            Get a specific user by its ID.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FashionNest.API.Controllers.UserController.Update(FashionNest.Application.Features.Users.Commands.UpdateUser.UpdateUserCommand)">
+            <summary>
+            Update an existing user.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FashionNest.API.Controllers.UserController.Delete(System.Guid)">
+            <summary>
+            Delete a user by its ID.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

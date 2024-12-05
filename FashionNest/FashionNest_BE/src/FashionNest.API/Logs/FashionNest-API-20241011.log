@@ -1,0 +1,35 @@
+2024-10-11 16:15:55.574 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-10-11 16:15:56.880 +07:00 [INF] Executed DbCommand (61ms) [Parameters=[@__email_0='linh@gmail.com' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[CreatedBy], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt], [u].[UpdatedBy]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2024-10-11 16:15:56.970 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@__ToLower_0='customer' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[Description], [r].[Name], [r].[UpdatedAt], [r].[UpdatedBy]
+FROM [Roles] AS [r]
+WHERE LOWER([r].[Name]) = @__ToLower_0
+2024-10-11 16:15:57.705 +07:00 [INF] Executed DbCommand (7ms) [Parameters=[@p0='fc749758-d546-4bd2-bf96-8089e5206568', @p1='HCM' (Nullable = false) (Size = 4000), @p2=NULL (Size = 4000), @p3=NULL (DbType = DateTime2), @p4=NULL (Size = 4000), @p5='linh@gmail.com' (Nullable = false) (Size = 450), @p6='True', @p7='Linh' (Nullable = false) (Size = 4000), @p8='$2a$11$vRBBVPjJPS0emq7QLSmIp.cjPCCsILqRJvvmaFPAWmG4k0L/hcUhS' (Nullable = false) (Size = 4000), @p9='0909090090' (Nullable = false) (Size = 4000), @p10='6b9ac222-64a6-4c52-815d-65b291f1a883', @p11=NULL (DbType = DateTime2), @p12=NULL (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [Address], [Avatar], [CreatedAt], [CreatedBy], [Email], [IsActive], [Name], [Password], [PhoneNumber], [RoleId], [UpdatedAt], [UpdatedBy])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+2024-10-11 16:16:09.437 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__email_0='linh@gmail.com' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[CreatedBy], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt], [u].[UpdatedBy]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2024-10-11 16:16:16.262 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='linh@gmail.com' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[CreatedBy], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt], [u].[UpdatedBy]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2024-10-11 16:17:52.692 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-10-11 16:17:53.635 +07:00 [INF] Executed DbCommand (51ms) [Parameters=[@__email_0='linh@gmail.com' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[CreatedBy], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt], [u].[UpdatedBy]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2024-10-11 16:18:12.685 +07:00 [INF] Get all roles GetRolesQuery { pageIndex = 1, pageSize = 10 }
+2024-10-11 16:18:12.696 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-11 16:18:12.697 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-10-11 16:18:12.715 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[Description], [r].[Name], [r].[UpdatedAt], [r].[UpdatedBy]
+FROM [Roles] AS [r]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY

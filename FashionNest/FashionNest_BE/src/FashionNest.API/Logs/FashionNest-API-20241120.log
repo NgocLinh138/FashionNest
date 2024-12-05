@@ -1,0 +1,1201 @@
+2024-11-20 13:37:46.731 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-11-20 13:37:46.824 +07:00 [WRN] The 'OrderStatus' property 'Status' on entity type 'Order' is configured with a database-generated default, but has no configured sentinel value. The database-generated default will always be used for inserts when the property has the value '0', since this is the CLR default for the 'OrderStatus' type. Consider using a nullable type, using a nullable backing field, or setting the sentinel value for the property to ensure the database default is used when, and only when, appropriate. See https://aka.ms/efcore-docs-default-values for more information.
+2024-11-20 13:37:46.840 +07:00 [WRN] No store type was specified for the decimal property 'MinOrderAmount' on entity type 'Coupon'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-11-20 13:37:47.045 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 13:37:47.045 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 13:37:47.735 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 13:37:47.893 +07:00 [INF] Executed DbCommand (64ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 13:37:47.893 +07:00 [INF] Executed DbCommand (64ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 13:37:47.893 +07:00 [INF] Executed DbCommand (64ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 13:37:48.327 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 13:37:48.499 +07:00 [INF] Executed DbCommand (53ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 13:37:48.966 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 13:37:48.973 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 13:37:52.263 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+ORDER BY [u].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-11-20 13:37:55.090 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = price, SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 13:37:55.095 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 14:12:33.712 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+ORDER BY [u].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-11-20 14:12:40.581 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+ORDER BY [u].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-11-20 14:12:43.559 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+ORDER BY [u].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-11-20 14:12:58.535 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+ORDER BY [u].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-11-20 14:16:19.473 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+ORDER BY [u].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-11-20 14:17:31.210 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+ORDER BY [u].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-11-20 14:19:06.772 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-11-20 14:19:06.773 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-11-20 14:19:06.780 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-11-20 14:20:28.464 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+ORDER BY [u].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-11-20 14:20:29.449 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+ORDER BY [u].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-11-20 14:25:36.962 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 14:25:36.971 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 14:25:38.856 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+ORDER BY [u].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-11-20 14:28:24.680 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@__email_0='ngoclinhh1308@gmail.com' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt], [r].[Id], [r].[CreatedAt], [r].[Description], [r].[Name], [r].[UpdatedAt]
+FROM [Users] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[Email] = @__email_0
+2024-11-20 14:28:25.949 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 14:28:25.955 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 14:30:08.455 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 14:30:08.460 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 14:31:08.441 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 14:31:08.446 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 14:31:18.427 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 14:31:18.431 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 14:32:34.442 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 14:32:34.447 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 14:32:35.431 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 14:32:35.435 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 14:32:57.442 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 14:32:57.445 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 14:33:04.451 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 14:33:04.456 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 14:33:37.437 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 14:33:37.440 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 14:33:38.427 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 14:33:38.432 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 14:33:54.428 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 14:33:54.432 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 14:39:37.449 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 14:39:37.500 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 14:44:40.228 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 14:44:40.234 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 14:44:46.069 +07:00 [INF] Get all products GetProductsQuery { Filter = d, SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 14:44:46.090 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@__filter_0_contains='%d%' (Size = 4000), @__p_1='0', @__p_2='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Name] LIKE @__filter_0_contains ESCAPE N'\' OR [p].[Description] LIKE @__filter_0_contains ESCAPE N'\' OR [c].[Name] LIKE @__filter_0_contains ESCAPE N'\'
+ORDER BY [p].[Name]
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2024-11-20 14:44:46.253 +07:00 [INF] Get all products GetProductsQuery { Filter = de, SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 14:44:46.257 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__filter_0_contains='%de%' (Size = 4000), @__p_1='0', @__p_2='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Name] LIKE @__filter_0_contains ESCAPE N'\' OR [p].[Description] LIKE @__filter_0_contains ESCAPE N'\' OR [c].[Name] LIKE @__filter_0_contains ESCAPE N'\'
+ORDER BY [p].[Name]
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2024-11-20 14:44:48.409 +07:00 [INF] Get all products GetProductsQuery { Filter = de, SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 14:44:48.412 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__filter_0_contains='%de%' (Size = 4000), @__p_1='0', @__p_2='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Name] LIKE @__filter_0_contains ESCAPE N'\' OR [p].[Description] LIKE @__filter_0_contains ESCAPE N'\' OR [c].[Name] LIKE @__filter_0_contains ESCAPE N'\'
+ORDER BY [p].[Name]
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2024-11-20 14:44:48.614 +07:00 [INF] Get all products GetProductsQuery { Filter = de, SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 14:44:48.618 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__filter_0_contains='%de%' (Size = 4000), @__p_1='0', @__p_2='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Name] LIKE @__filter_0_contains ESCAPE N'\' OR [p].[Description] LIKE @__filter_0_contains ESCAPE N'\' OR [c].[Name] LIKE @__filter_0_contains ESCAPE N'\'
+ORDER BY [p].[Name]
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2024-11-20 14:44:50.095 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 14:44:50.100 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 14:44:50.586 +07:00 [INF] Get all products GetProductsQuery { Filter = c, SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 14:44:50.589 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__filter_0_contains='%c%' (Size = 4000), @__p_1='0', @__p_2='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Name] LIKE @__filter_0_contains ESCAPE N'\' OR [p].[Description] LIKE @__filter_0_contains ESCAPE N'\' OR [c].[Name] LIKE @__filter_0_contains ESCAPE N'\'
+ORDER BY [p].[Name]
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2024-11-20 14:44:51.352 +07:00 [INF] Get all products GetProductsQuery { Filter = cl, SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 14:44:51.354 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__filter_0_contains='%cl%' (Size = 4000), @__p_1='0', @__p_2='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Name] LIKE @__filter_0_contains ESCAPE N'\' OR [p].[Description] LIKE @__filter_0_contains ESCAPE N'\' OR [c].[Name] LIKE @__filter_0_contains ESCAPE N'\'
+ORDER BY [p].[Name]
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2024-11-20 14:44:51.624 +07:00 [INF] Get all products GetProductsQuery { Filter = cla, SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 14:44:51.627 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__filter_0_contains='%cla%' (Size = 4000), @__p_1='0', @__p_2='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Name] LIKE @__filter_0_contains ESCAPE N'\' OR [p].[Description] LIKE @__filter_0_contains ESCAPE N'\' OR [c].[Name] LIKE @__filter_0_contains ESCAPE N'\'
+ORDER BY [p].[Name]
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2024-11-20 14:44:51.827 +07:00 [INF] Get all products GetProductsQuery { Filter = clas, SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 14:44:51.830 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__filter_0_contains='%clas%' (Size = 4000), @__p_1='0', @__p_2='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Name] LIKE @__filter_0_contains ESCAPE N'\' OR [p].[Description] LIKE @__filter_0_contains ESCAPE N'\' OR [c].[Name] LIKE @__filter_0_contains ESCAPE N'\'
+ORDER BY [p].[Name]
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2024-11-20 14:44:52.193 +07:00 [INF] Get all products GetProductsQuery { Filter = cla, SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 14:44:52.196 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__filter_0_contains='%cla%' (Size = 4000), @__p_1='0', @__p_2='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Name] LIKE @__filter_0_contains ESCAPE N'\' OR [p].[Description] LIKE @__filter_0_contains ESCAPE N'\' OR [c].[Name] LIKE @__filter_0_contains ESCAPE N'\'
+ORDER BY [p].[Name]
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2024-11-20 14:44:52.317 +07:00 [INF] Get all products GetProductsQuery { Filter = cl, SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 14:44:52.322 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__filter_0_contains='%cl%' (Size = 4000), @__p_1='0', @__p_2='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Name] LIKE @__filter_0_contains ESCAPE N'\' OR [p].[Description] LIKE @__filter_0_contains ESCAPE N'\' OR [c].[Name] LIKE @__filter_0_contains ESCAPE N'\'
+ORDER BY [p].[Name]
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2024-11-20 14:44:52.426 +07:00 [INF] Get all products GetProductsQuery { Filter = c, SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 14:44:52.428 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__filter_0_contains='%c%' (Size = 4000), @__p_1='0', @__p_2='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Name] LIKE @__filter_0_contains ESCAPE N'\' OR [p].[Description] LIKE @__filter_0_contains ESCAPE N'\' OR [c].[Name] LIKE @__filter_0_contains ESCAPE N'\'
+ORDER BY [p].[Name]
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2024-11-20 14:44:52.574 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 14:44:52.576 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 14:44:56.592 +07:00 [INF] Get all products GetProductsQuery { Filter = j, SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 14:44:56.595 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__filter_0_contains='%j%' (Size = 4000), @__p_1='0', @__p_2='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Name] LIKE @__filter_0_contains ESCAPE N'\' OR [p].[Description] LIKE @__filter_0_contains ESCAPE N'\' OR [c].[Name] LIKE @__filter_0_contains ESCAPE N'\'
+ORDER BY [p].[Name]
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2024-11-20 14:44:56.634 +07:00 [INF] Get all products GetProductsQuery { Filter = je, SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 14:44:56.637 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__filter_0_contains='%je%' (Size = 4000), @__p_1='0', @__p_2='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Name] LIKE @__filter_0_contains ESCAPE N'\' OR [p].[Description] LIKE @__filter_0_contains ESCAPE N'\' OR [c].[Name] LIKE @__filter_0_contains ESCAPE N'\'
+ORDER BY [p].[Name]
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2024-11-20 14:44:57.437 +07:00 [INF] Get all products GetProductsQuery { Filter = j, SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 14:44:57.439 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__filter_0_contains='%j%' (Size = 4000), @__p_1='0', @__p_2='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Name] LIKE @__filter_0_contains ESCAPE N'\' OR [p].[Description] LIKE @__filter_0_contains ESCAPE N'\' OR [c].[Name] LIKE @__filter_0_contains ESCAPE N'\'
+ORDER BY [p].[Name]
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2024-11-20 14:44:57.587 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 14:44:57.589 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 14:45:00.581 +07:00 [INF] Get all products GetProductsQuery { Filter = j, SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 14:45:00.584 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__filter_0_contains='%j%' (Size = 4000), @__p_1='0', @__p_2='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+WHERE [p].[Name] LIKE @__filter_0_contains ESCAPE N'\' OR [p].[Description] LIKE @__filter_0_contains ESCAPE N'\' OR [c].[Name] LIKE @__filter_0_contains ESCAPE N'\'
+ORDER BY [p].[Name]
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2024-11-20 14:45:01.900 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 14:45:01.903 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 14:46:26.769 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+ORDER BY [u].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-11-20 14:46:38.552 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__email_0='ngoclinhh1308@gmail.com' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt], [r].[Id], [r].[CreatedAt], [r].[Description], [r].[Name], [r].[UpdatedAt]
+FROM [Users] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[Email] = @__email_0
+2024-11-20 14:46:39.905 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 14:46:39.910 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 14:50:41.371 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='45898c2b-8d10-4e49-ba79-f787bc177477' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @__p_0
+2024-11-20 14:50:41.383 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='d2020a52-96ba-4a1a-97fb-8c1e1d9bef3a' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0
+2024-11-20 14:51:39.222 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='3fa85f64-5717-4562-b3fc-2c963f66afa6' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Code], [c].[CreatedAt], [c].[Description], [c].[DiscountAmount], [c].[ExpirationDate], [c].[IsActive], [c].[IsNewCustomerOnly], [c].[MaxUses], [c].[MaxUsesPerUser], [c].[MinOrderAmount], [c].[UpdatedAt], [c].[UsedCount]
+FROM [Coupons] AS [c]
+WHERE [c].[Id] = @__p_0
+2024-11-20 14:54:07.083 +07:00 [ERR] Failed executing DbCommand (123ms) [Parameters=[@p0='aaf34e19-2c10-4200-b09e-04c072106c31', @p1='0' (Precision = 18) (Scale = 2), @p2='2024-11-20T14:54:06.8492744+07:00', @p3='Payment for order' (Size = 4000), @p4='VNPay' (Size = 4000), @p5='2024-11-20T07:54:06.8490773Z', @p6='Pending' (Size = 4000), @p7=NULL (DbType = DateTime2), @p8='3fa85f64-5717-4562-b3fc-2c963f66afa6'], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payments] ([Id], [Amount], [CreatedAt], [Description], [Method], [PaymentDate], [Status], [UpdatedAt], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2024-11-20 14:54:07.410 +07:00 [ERR] An exception occurred in the database while saving changes for context type 'FashionNest.Infrastructure.Persistence.ApplicationDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Payments_Users_UserId". The conflict occurred in database "FashionNest", table "dbo.Users", column 'Id'.
+The statement has been terminated.
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:dce66eaa-ee7c-47e8-b920-d5ab79b99ba5
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Payments_Users_UserId". The conflict occurred in database "FashionNest", table "dbo.Users", column 'Id'.
+The statement has been terminated.
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:dce66eaa-ee7c-47e8-b920-d5ab79b99ba5
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-11-20 14:54:08.033 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Payments_Users_UserId". The conflict occurred in database "FashionNest", table "dbo.Users", column 'Id'.
+The statement has been terminated.
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:dce66eaa-ee7c-47e8-b920-d5ab79b99ba5
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at FashionNest.Application.Repositories.GenericRepository`1.SaveAsync() in D:\NgocLinhHome\C_sharp\github-project\FashionNest\src\FashionNest.Infrastructure\Repositories\GenericRepository.cs:line 82
+   at FashionNest.Application.Features.Payments.Commands.VnPay.CreatePaymentVnPay.CreatePaymentVnPayCommandHandler.Handle(CreatePaymentVnPayCommand request, CancellationToken cancellationToken) in D:\NgocLinhHome\C_sharp\github-project\FashionNest\src\FashionNest.Application\Features\Payments\Commands\VnPay\CreatePaymentVnPay\CreatePaymentVnPayCommandHandler.cs:line 40
+   at FashionNest.API.Controllers.PaymentController.Payments(CreatePaymentVnPayCommand request) in D:\NgocLinhHome\C_sharp\github-project\FashionNest\src\FashionNest.API\Controllers\PaymentController.cs:line 85
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-11-20 14:54:25.540 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='3fa85f64-5717-4562-b3fc-2c963f66afa6' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Amount], [p].[CreatedAt], [p].[Description], [p].[Method], [p].[PaymentDate], [p].[Status], [p].[UpdatedAt], [p].[UserId]
+FROM [Payments] AS [p]
+WHERE [p].[Id] = @__p_0
+2024-11-20 14:55:01.698 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='3fa85f64-5717-4562-b3fc-2c963f66afa6' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CouponId], [o].[CouponUsed], [o].[CreatedAt], [o].[DeleteDate], [o].[IsDeleted], [o].[OrderDate], [o].[PaymentId], [o].[Status], [o].[TotalPrice], [o].[UpdatedAt], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Id] = @__p_0
+2024-11-20 14:59:46.687 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 14:59:46.735 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 17:25:32.440 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 17:25:32.451 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 17:25:34.930 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='3e32704d-c55e-4ba9-835a-d6e8c6670c6f' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @__p_0
+2024-11-20 17:25:34.935 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='5c8061f6-0363-431e-beeb-3e2437da45a6' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0
+2024-11-20 17:49:00.393 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__email_0='ngoclinhh1308@gmail.com' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt], [r].[Id], [r].[CreatedAt], [r].[Description], [r].[Name], [r].[UpdatedAt]
+FROM [Users] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[Email] = @__email_0
+2024-11-20 17:50:30.585 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='438dfb88-8ebb-41ea-9817-3824a46201fc' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-11-20 17:50:30.596 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='6b9ac222-64a6-4c52-815d-65b291f1a883' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[Description], [r].[Name], [r].[UpdatedAt]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__p_0
+2024-11-20 18:02:52.297 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 18:02:52.314 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 18:03:07.100 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='9855a285-5328-42eb-90cb-0b5db95f0658' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @__p_0
+2024-11-20 18:03:07.107 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='d2020a52-96ba-4a1a-97fb-8c1e1d9bef3a' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0
+2024-11-20 21:21:09.501 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-11-20 21:21:09.599 +07:00 [WRN] The 'OrderStatus' property 'Status' on entity type 'Order' is configured with a database-generated default, but has no configured sentinel value. The database-generated default will always be used for inserts when the property has the value '0', since this is the CLR default for the 'OrderStatus' type. Consider using a nullable type, using a nullable backing field, or setting the sentinel value for the property to ensure the database default is used when, and only when, appropriate. See https://aka.ms/efcore-docs-default-values for more information.
+2024-11-20 21:21:09.611 +07:00 [WRN] No store type was specified for the decimal property 'MinOrderAmount' on entity type 'Coupon'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-11-20 21:21:09.838 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 21:21:10.535 +07:00 [INF] Executed DbCommand (45ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 21:21:11.578 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='3e32704d-c55e-4ba9-835a-d6e8c6670c6f' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @__p_0
+2024-11-20 21:21:11.591 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='5c8061f6-0363-431e-beeb-3e2437da45a6' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0
+2024-11-20 21:21:13.722 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='3e32704d-c55e-4ba9-835a-d6e8c6670c6f' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @__p_0
+2024-11-20 21:21:13.727 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='5c8061f6-0363-431e-beeb-3e2437da45a6' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0
+2024-11-20 21:21:27.102 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@__email_0='ngoclinhh1308@gmail.com' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt], [r].[Id], [r].[CreatedAt], [r].[Description], [r].[Name], [r].[UpdatedAt]
+FROM [Users] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[Email] = @__email_0
+2024-11-20 21:21:28.399 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 21:21:28.407 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 21:31:45.230 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='438dfb88-8ebb-41ea-9817-3824a46201fc' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-11-20 21:31:45.262 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='6b9ac222-64a6-4c52-815d-65b291f1a883' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[Description], [r].[Name], [r].[UpdatedAt]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__p_0
+2024-11-20 21:31:50.160 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='438dfb88-8ebb-41ea-9817-3824a46201fc' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-11-20 21:31:50.165 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='6b9ac222-64a6-4c52-815d-65b291f1a883' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[Description], [r].[Name], [r].[UpdatedAt]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__p_0
+2024-11-20 21:31:59.156 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='438dfb88-8ebb-41ea-9817-3824a46201fc' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-11-20 21:31:59.160 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='6b9ac222-64a6-4c52-815d-65b291f1a883' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[Description], [r].[Name], [r].[UpdatedAt]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__p_0
+2024-11-20 21:32:04.235 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='438dfb88-8ebb-41ea-9817-3824a46201fc' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-11-20 21:32:04.240 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='6b9ac222-64a6-4c52-815d-65b291f1a883' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[Description], [r].[Name], [r].[UpdatedAt]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__p_0
+2024-11-20 21:32:10.018 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='438dfb88-8ebb-41ea-9817-3824a46201fc' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-11-20 21:32:10.027 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='6b9ac222-64a6-4c52-815d-65b291f1a883' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[Description], [r].[Name], [r].[UpdatedAt]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__p_0
+2024-11-20 21:32:35.308 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='438dfb88-8ebb-41ea-9817-3824a46201fc' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-11-20 21:32:35.315 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='6b9ac222-64a6-4c52-815d-65b291f1a883' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[Description], [r].[Name], [r].[UpdatedAt]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__p_0
+2024-11-20 21:32:57.149 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='438dfb88-8ebb-41ea-9817-3824a46201fc' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-11-20 21:32:57.154 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='6b9ac222-64a6-4c52-815d-65b291f1a883' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[Description], [r].[Name], [r].[UpdatedAt]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__p_0
+2024-11-20 21:33:13.231 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='438dfb88-8ebb-41ea-9817-3824a46201fc' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-11-20 21:33:13.237 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='6b9ac222-64a6-4c52-815d-65b291f1a883' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[Description], [r].[Name], [r].[UpdatedAt]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__p_0
+2024-11-20 21:33:32.820 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='438dfb88-8ebb-41ea-9817-3824a46201fc' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-11-20 21:33:32.824 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='6b9ac222-64a6-4c52-815d-65b291f1a883' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[Description], [r].[Name], [r].[UpdatedAt]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__p_0
+2024-11-20 21:33:34.809 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='438dfb88-8ebb-41ea-9817-3824a46201fc' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-11-20 21:33:34.813 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='6b9ac222-64a6-4c52-815d-65b291f1a883' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[Description], [r].[Name], [r].[UpdatedAt]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__p_0
+2024-11-20 21:33:36.180 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='438dfb88-8ebb-41ea-9817-3824a46201fc' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-11-20 21:33:36.184 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='6b9ac222-64a6-4c52-815d-65b291f1a883' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[Description], [r].[Name], [r].[UpdatedAt]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__p_0
+2024-11-20 21:33:38.291 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='438dfb88-8ebb-41ea-9817-3824a46201fc' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-11-20 21:33:38.295 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='6b9ac222-64a6-4c52-815d-65b291f1a883' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[Description], [r].[Name], [r].[UpdatedAt]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__p_0
+2024-11-20 21:33:41.442 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='438dfb88-8ebb-41ea-9817-3824a46201fc' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-11-20 21:33:41.446 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='6b9ac222-64a6-4c52-815d-65b291f1a883' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[Description], [r].[Name], [r].[UpdatedAt]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__p_0
+2024-11-20 21:33:43.051 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='438dfb88-8ebb-41ea-9817-3824a46201fc' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-11-20 21:33:43.055 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='6b9ac222-64a6-4c52-815d-65b291f1a883' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[Description], [r].[Name], [r].[UpdatedAt]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__p_0
+2024-11-20 21:35:11.196 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='438dfb88-8ebb-41ea-9817-3824a46201fc' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-11-20 21:35:11.202 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='6b9ac222-64a6-4c52-815d-65b291f1a883' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[Description], [r].[Name], [r].[UpdatedAt]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__p_0
+2024-11-20 21:35:15.981 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='438dfb88-8ebb-41ea-9817-3824a46201fc' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-11-20 21:35:15.987 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='6b9ac222-64a6-4c52-815d-65b291f1a883' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[Description], [r].[Name], [r].[UpdatedAt]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__p_0
+2024-11-20 21:35:16.553 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='438dfb88-8ebb-41ea-9817-3824a46201fc' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-11-20 21:35:16.559 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='6b9ac222-64a6-4c52-815d-65b291f1a883' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[Description], [r].[Name], [r].[UpdatedAt]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__p_0
+2024-11-20 21:35:21.318 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 21:35:21.325 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 21:35:22.032 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='3e32704d-c55e-4ba9-835a-d6e8c6670c6f' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @__p_0
+2024-11-20 21:35:22.037 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='5c8061f6-0363-431e-beeb-3e2437da45a6' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0
+2024-11-20 21:35:26.819 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='438dfb88-8ebb-41ea-9817-3824a46201fc' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-11-20 21:35:26.826 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='6b9ac222-64a6-4c52-815d-65b291f1a883' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[Description], [r].[Name], [r].[UpdatedAt]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__p_0
+2024-11-20 21:51:25.417 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-11-20 21:51:25.494 +07:00 [WRN] The 'OrderStatus' property 'Status' on entity type 'Order' is configured with a database-generated default, but has no configured sentinel value. The database-generated default will always be used for inserts when the property has the value '0', since this is the CLR default for the 'OrderStatus' type. Consider using a nullable type, using a nullable backing field, or setting the sentinel value for the property to ensure the database default is used when, and only when, appropriate. See https://aka.ms/efcore-docs-default-values for more information.
+2024-11-20 21:51:25.507 +07:00 [WRN] No store type was specified for the decimal property 'MinOrderAmount' on entity type 'Coupon'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-11-20 21:51:26.017 +07:00 [INF] Executed DbCommand (37ms) [Parameters=[@p0='d0d3845c-40dc-4a2e-91f8-abe81bef3631', @p1='500000' (Precision = 18) (Scale = 2), @p2='2024-11-20T21:51:25.5731897+07:00', @p3='Payment for order via Cash on Delivery' (Size = 4000), @p4='COD' (Size = 4000), @p5='2024-11-20T14:51:25.5730155Z', @p6='Pending' (Size = 4000), @p7=NULL (DbType = DateTime2), @p8='fc749758-d546-4bd2-bf96-8089e5206568'], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payments] ([Id], [Amount], [CreatedAt], [Description], [Method], [PaymentDate], [Status], [UpdatedAt], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2024-11-20 21:51:26.148 +07:00 [INF] Executed DbCommand (12ms) [Parameters=[@p0='29e19c09-16c0-44f1-a15a-73de3bb78809', @p1=NULL (DbType = Guid), @p2='0', @p3='2024-11-20T21:51:25.5704934+07:00', @p4=NULL (DbType = DateTime2), @p5='False', @p6='2024-11-20T14:51:25.5702752Z', @p7='d0d3845c-40dc-4a2e-91f8-abe81bef3631' (Nullable = true), @p8='Draft' (Nullable = false) (Size = 4000), @p9='500000' (Precision = 18) (Scale = 2), @p10=NULL (DbType = DateTime2), @p11='fc749758-d546-4bd2-bf96-8089e5206568', @p12='b59ebf7a-f3e8-41e6-9f63-e07c8c6a1108', @p13='2024-11-20T21:51:25.5711990+07:00', @p14='29e19c09-16c0-44f1-a15a-73de3bb78809', @p15='500000' (Precision = 18) (Scale = 2), @p16='9855a285-5328-42eb-90cb-0b5db95f0658', @p17='1', @p18=NULL (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Orders] ([Id], [CouponId], [CouponUsed], [CreatedAt], [DeleteDate], [IsDeleted], [OrderDate], [PaymentId], [Status], [TotalPrice], [UpdatedAt], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+INSERT INTO [OrderItems] ([Id], [CreatedAt], [OrderId], [Price], [ProductId], [Quantity], [UpdatedAt])
+VALUES (@p12, @p13, @p14, @p15, @p16, @p17, @p18);
+2024-11-20 21:52:23.836 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='2d661d72-a9da-4a50-89fb-5028f7ed49e2', @p1='500000' (Precision = 18) (Scale = 2), @p2='2024-11-20T21:52:23.8318303+07:00', @p3='Payment for order via VNPay' (Size = 4000), @p4='VNPay' (Size = 4000), @p5='2024-11-20T14:52:23.8318299Z', @p6='Pending' (Size = 4000), @p7=NULL (DbType = DateTime2), @p8='fc749758-d546-4bd2-bf96-8089e5206568'], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payments] ([Id], [Amount], [CreatedAt], [Description], [Method], [PaymentDate], [Status], [UpdatedAt], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2024-11-20 21:52:23.845 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='2ff95ac6-3474-4eeb-ab6a-0470b9912f27', @p1=NULL (DbType = Guid), @p2='0', @p3='2024-11-20T21:52:23.8318090+07:00', @p4=NULL (DbType = DateTime2), @p5='False', @p6='2024-11-20T14:52:23.8318060Z', @p7='2d661d72-a9da-4a50-89fb-5028f7ed49e2' (Nullable = true), @p8='Draft' (Nullable = false) (Size = 4000), @p9='500000' (Precision = 18) (Scale = 2), @p10=NULL (DbType = DateTime2), @p11='fc749758-d546-4bd2-bf96-8089e5206568', @p12='128b97ab-2f1b-4318-906a-f48b689f40d8', @p13='2024-11-20T21:52:23.8318172+07:00', @p14='2ff95ac6-3474-4eeb-ab6a-0470b9912f27', @p15='500000' (Precision = 18) (Scale = 2), @p16='9855a285-5328-42eb-90cb-0b5db95f0658', @p17='1', @p18=NULL (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Orders] ([Id], [CouponId], [CouponUsed], [CreatedAt], [DeleteDate], [IsDeleted], [OrderDate], [PaymentId], [Status], [TotalPrice], [UpdatedAt], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+INSERT INTO [OrderItems] ([Id], [CreatedAt], [OrderId], [Price], [ProductId], [Quantity], [UpdatedAt])
+VALUES (@p12, @p13, @p14, @p15, @p16, @p17, @p18);
+2024-11-20 22:22:11.427 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-11-20 22:22:11.516 +07:00 [WRN] The 'OrderStatus' property 'Status' on entity type 'Order' is configured with a database-generated default, but has no configured sentinel value. The database-generated default will always be used for inserts when the property has the value '0', since this is the CLR default for the 'OrderStatus' type. Consider using a nullable type, using a nullable backing field, or setting the sentinel value for the property to ensure the database default is used when, and only when, appropriate. See https://aka.ms/efcore-docs-default-values for more information.
+2024-11-20 22:22:11.530 +07:00 [WRN] No store type was specified for the decimal property 'MinOrderAmount' on entity type 'Coupon'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-11-20 22:22:12.223 +07:00 [INF] Executed DbCommand (43ms) [Parameters=[@__p_0='438dfb88-8ebb-41ea-9817-3824a46201fc' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-11-20 22:22:12.223 +07:00 [INF] Executed DbCommand (43ms) [Parameters=[@__p_0='438dfb88-8ebb-41ea-9817-3824a46201fc' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-11-20 22:22:12.223 +07:00 [INF] Executed DbCommand (43ms) [Parameters=[@__p_0='438dfb88-8ebb-41ea-9817-3824a46201fc' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-11-20 22:22:12.336 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='6b9ac222-64a6-4c52-815d-65b291f1a883' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[Description], [r].[Name], [r].[UpdatedAt]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__p_0
+2024-11-20 22:22:12.336 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='6b9ac222-64a6-4c52-815d-65b291f1a883' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[Description], [r].[Name], [r].[UpdatedAt]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__p_0
+2024-11-20 22:22:12.336 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='6b9ac222-64a6-4c52-815d-65b291f1a883' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[Description], [r].[Name], [r].[UpdatedAt]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__p_0
+2024-11-20 22:22:12.624 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='438dfb88-8ebb-41ea-9817-3824a46201fc' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-11-20 22:22:12.770 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='6b9ac222-64a6-4c52-815d-65b291f1a883' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[Description], [r].[Name], [r].[UpdatedAt]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__p_0
+2024-11-20 22:22:12.973 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='438dfb88-8ebb-41ea-9817-3824a46201fc' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-11-20 22:22:12.979 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='6b9ac222-64a6-4c52-815d-65b291f1a883' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[Description], [r].[Name], [r].[UpdatedAt]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__p_0
+2024-11-20 22:22:54.562 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='16b149bf-7427-4719-b7ce-6ec2f0f85564', @p1='500000.00' (Precision = 18) (Scale = 2), @p2='2024-11-20T22:22:54.4555683+07:00', @p3='Payment for order via VNPay' (Size = 4000), @p4='VNPay' (Size = 4000), @p5='2024-11-20T15:22:54.4553963Z', @p6='Pending' (Size = 4000), @p7=NULL (DbType = DateTime2), @p8='fc749758-d546-4bd2-bf96-8089e5206568'], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payments] ([Id], [Amount], [CreatedAt], [Description], [Method], [PaymentDate], [Status], [UpdatedAt], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2024-11-20 22:22:54.660 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='b0799b17-d4b1-40b5-b866-1abe60b80794', @p1=NULL (DbType = Guid), @p2='0', @p3='2024-11-20T22:22:54.4527828+07:00', @p4=NULL (DbType = DateTime2), @p5='False', @p6='2024-11-20T15:22:54.4526195Z', @p7='16b149bf-7427-4719-b7ce-6ec2f0f85564' (Nullable = true), @p8='Draft' (Nullable = false) (Size = 4000), @p9='500000.00' (Precision = 18) (Scale = 2), @p10=NULL (DbType = DateTime2), @p11='fc749758-d546-4bd2-bf96-8089e5206568', @p12='bd2fc8bc-8a0c-4e85-86af-9a79fdce01af', @p13='2024-11-20T22:22:54.4534396+07:00', @p14='b0799b17-d4b1-40b5-b866-1abe60b80794', @p15='500000.00' (Precision = 18) (Scale = 2), @p16='9855a285-5328-42eb-90cb-0b5db95f0658', @p17='1', @p18=NULL (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Orders] ([Id], [CouponId], [CouponUsed], [CreatedAt], [DeleteDate], [IsDeleted], [OrderDate], [PaymentId], [Status], [TotalPrice], [UpdatedAt], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+INSERT INTO [OrderItems] ([Id], [CreatedAt], [OrderId], [Price], [ProductId], [Quantity], [UpdatedAt])
+VALUES (@p12, @p13, @p14, @p15, @p16, @p17, @p18);
+2024-11-20 22:24:38.126 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='29e19c09-16c0-44f1-a15a-73de3bb78809' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CouponId], [o].[CouponUsed], [o].[CreatedAt], [o].[DeleteDate], [o].[IsDeleted], [o].[OrderDate], [o].[PaymentId], [o].[Status], [o].[TotalPrice], [o].[UpdatedAt], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Id] = @__p_0
+2024-11-20 22:24:38.147 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@p11='29e19c09-16c0-44f1-a15a-73de3bb78809', @p0=NULL (DbType = Guid), @p1='0', @p2='2024-11-20T21:51:25.5704934', @p3=NULL (DbType = DateTime2), @p4='False', @p5='2024-11-20T14:51:25.5702752', @p6='d0d3845c-40dc-4a2e-91f8-abe81bef3631' (Nullable = true), @p7='Completed' (Nullable = false) (Size = 4000), @p8='500000.00' (Precision = 18) (Scale = 2), @p9=NULL (DbType = DateTime2), @p10='fc749758-d546-4bd2-bf96-8089e5206568'], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Orders] SET [CouponId] = @p0, [CouponUsed] = @p1, [CreatedAt] = @p2, [DeleteDate] = @p3, [IsDeleted] = @p4, [OrderDate] = @p5, [PaymentId] = @p6, [Status] = @p7, [TotalPrice] = @p8, [UpdatedAt] = @p9, [UserId] = @p10
+OUTPUT 1
+WHERE [Id] = @p11;
+2024-11-20 22:35:42.864 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='438dfb88-8ebb-41ea-9817-3824a46201fc' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-11-20 22:35:42.868 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='6b9ac222-64a6-4c52-815d-65b291f1a883' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[Description], [r].[Name], [r].[UpdatedAt]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__p_0
+2024-11-20 22:37:37.156 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='438dfb88-8ebb-41ea-9817-3824a46201fc' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-11-20 22:37:37.162 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='6b9ac222-64a6-4c52-815d-65b291f1a883' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[Description], [r].[Name], [r].[UpdatedAt]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__p_0
+2024-11-20 22:37:39.428 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='fc2b6fed-a992-4c04-943a-cf0b71aa91a3', @p1='200000' (Precision = 18) (Scale = 2), @p2='2024-11-20T22:37:39.4260944+07:00', @p3='Payment for order via VNPay' (Size = 4000), @p4='VNPay' (Size = 4000), @p5='2024-11-20T15:37:39.4260935Z', @p6='Pending' (Size = 4000), @p7=NULL (DbType = DateTime2), @p8='438dfb88-8ebb-41ea-9817-3824a46201fc'], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payments] ([Id], [Amount], [CreatedAt], [Description], [Method], [PaymentDate], [Status], [UpdatedAt], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2024-11-20 22:37:39.433 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='48528694-ee70-41a6-92b7-4b2f3151f319', @p1=NULL (DbType = Guid), @p2='0', @p3='2024-11-20T22:37:39.4260753+07:00', @p4=NULL (DbType = DateTime2), @p5='False', @p6='2024-11-20T15:37:39.4260734Z', @p7='fc2b6fed-a992-4c04-943a-cf0b71aa91a3' (Nullable = true), @p8='Draft' (Nullable = false) (Size = 4000), @p9='200000' (Precision = 18) (Scale = 2), @p10=NULL (DbType = DateTime2), @p11='438dfb88-8ebb-41ea-9817-3824a46201fc', @p12='8bf6564f-cb31-4a44-8059-565dbcd3c3da', @p13='2024-11-20T22:37:39.4260792+07:00', @p14='48528694-ee70-41a6-92b7-4b2f3151f319', @p15='100000' (Precision = 18) (Scale = 2), @p16='3e32704d-c55e-4ba9-835a-d6e8c6670c6f', @p17='2', @p18=NULL (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Orders] ([Id], [CouponId], [CouponUsed], [CreatedAt], [DeleteDate], [IsDeleted], [OrderDate], [PaymentId], [Status], [TotalPrice], [UpdatedAt], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+INSERT INTO [OrderItems] ([Id], [CreatedAt], [OrderId], [Price], [ProductId], [Quantity], [UpdatedAt])
+VALUES (@p12, @p13, @p14, @p15, @p16, @p17, @p18);
+2024-11-20 22:38:35.997 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 22:38:36.053 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 22:38:36.914 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='45898c2b-8d10-4e49-ba79-f787bc177477' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @__p_0
+2024-11-20 22:38:36.927 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='d2020a52-96ba-4a1a-97fb-8c1e1d9bef3a' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0
+2024-11-20 22:38:40.216 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='438dfb88-8ebb-41ea-9817-3824a46201fc' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-11-20 22:38:40.220 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='6b9ac222-64a6-4c52-815d-65b291f1a883' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[Description], [r].[Name], [r].[UpdatedAt]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__p_0
+2024-11-20 22:38:42.536 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='12172303-7587-4617-a761-21451fcd330d', @p1='200000' (Precision = 18) (Scale = 2), @p2='2024-11-20T22:38:42.5331848+07:00', @p3='Payment for order via VNPay' (Size = 4000), @p4='VNPay' (Size = 4000), @p5='2024-11-20T15:38:42.5331841Z', @p6='Pending' (Size = 4000), @p7=NULL (DbType = DateTime2), @p8='438dfb88-8ebb-41ea-9817-3824a46201fc'], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payments] ([Id], [Amount], [CreatedAt], [Description], [Method], [PaymentDate], [Status], [UpdatedAt], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2024-11-20 22:38:42.544 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='eb802bfc-b349-4f23-9cda-7e18271a3885', @p1=NULL (DbType = Guid), @p2='0', @p3='2024-11-20T22:38:42.5331756+07:00', @p4=NULL (DbType = DateTime2), @p5='False', @p6='2024-11-20T15:38:42.5331738Z', @p7='12172303-7587-4617-a761-21451fcd330d' (Nullable = true), @p8='Draft' (Nullable = false) (Size = 4000), @p9='200000' (Precision = 18) (Scale = 2), @p10=NULL (DbType = DateTime2), @p11='438dfb88-8ebb-41ea-9817-3824a46201fc', @p12='da49b0e9-aaf0-4903-bcf5-d3500aac4efc', @p13='2024-11-20T22:38:42.5331788+07:00', @p14='eb802bfc-b349-4f23-9cda-7e18271a3885', @p15='200000' (Precision = 18) (Scale = 2), @p16='45898c2b-8d10-4e49-ba79-f787bc177477', @p17='1', @p18=NULL (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Orders] ([Id], [CouponId], [CouponUsed], [CreatedAt], [DeleteDate], [IsDeleted], [OrderDate], [PaymentId], [Status], [TotalPrice], [UpdatedAt], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+INSERT INTO [OrderItems] ([Id], [CreatedAt], [OrderId], [Price], [ProductId], [Quantity], [UpdatedAt])
+VALUES (@p12, @p13, @p14, @p15, @p16, @p17, @p18);
+2024-11-20 22:40:53.698 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 22:40:53.702 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 22:40:54.180 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='3e32704d-c55e-4ba9-835a-d6e8c6670c6f' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @__p_0
+2024-11-20 22:40:54.186 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='5c8061f6-0363-431e-beeb-3e2437da45a6' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0
+2024-11-20 22:40:57.083 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='438dfb88-8ebb-41ea-9817-3824a46201fc' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-11-20 22:40:57.089 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='6b9ac222-64a6-4c52-815d-65b291f1a883' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[Description], [r].[Name], [r].[UpdatedAt]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__p_0
+2024-11-20 22:40:58.536 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='c68caff7-f2ff-4a83-9ff4-fcb27442333b', @p1='100000' (Precision = 18) (Scale = 2), @p2='2024-11-20T22:40:58.5329493+07:00', @p3='Payment for order via VNPay' (Size = 4000), @p4='VNPay' (Size = 4000), @p5='2024-11-20T15:40:58.5329488Z', @p6='Pending' (Size = 4000), @p7=NULL (DbType = DateTime2), @p8='438dfb88-8ebb-41ea-9817-3824a46201fc'], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payments] ([Id], [Amount], [CreatedAt], [Description], [Method], [PaymentDate], [Status], [UpdatedAt], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2024-11-20 22:40:58.541 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='e3484ec1-881d-4aed-b46e-7ae7a5438026', @p1=NULL (DbType = Guid), @p2='0', @p3='2024-11-20T22:40:58.5329351+07:00', @p4=NULL (DbType = DateTime2), @p5='False', @p6='2024-11-20T15:40:58.5329336Z', @p7='c68caff7-f2ff-4a83-9ff4-fcb27442333b' (Nullable = true), @p8='Draft' (Nullable = false) (Size = 4000), @p9='100000' (Precision = 18) (Scale = 2), @p10=NULL (DbType = DateTime2), @p11='438dfb88-8ebb-41ea-9817-3824a46201fc', @p12='02074248-fed7-402e-8eb0-af9ff32e6f65', @p13='2024-11-20T22:40:58.5329384+07:00', @p14='e3484ec1-881d-4aed-b46e-7ae7a5438026', @p15='100000' (Precision = 18) (Scale = 2), @p16='3e32704d-c55e-4ba9-835a-d6e8c6670c6f', @p17='1', @p18=NULL (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Orders] ([Id], [CouponId], [CouponUsed], [CreatedAt], [DeleteDate], [IsDeleted], [OrderDate], [PaymentId], [Status], [TotalPrice], [UpdatedAt], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+INSERT INTO [OrderItems] ([Id], [CreatedAt], [OrderId], [Price], [ProductId], [Quantity], [UpdatedAt])
+VALUES (@p12, @p13, @p14, @p15, @p16, @p17, @p18);
+2024-11-20 22:40:59.202 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 22:40:59.207 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 22:41:03.780 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 22:41:03.784 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 22:41:19.798 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='9855a285-5328-42eb-90cb-0b5db95f0658' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @__p_0
+2024-11-20 22:41:19.803 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='d2020a52-96ba-4a1a-97fb-8c1e1d9bef3a' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0
+2024-11-20 22:41:23.861 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 22:41:23.866 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 22:42:33.480 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 22:42:33.483 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 22:42:58.911 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 22:42:58.916 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 22:43:45.920 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 22:43:45.924 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 22:44:03.278 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='3e32704d-c55e-4ba9-835a-d6e8c6670c6f' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @__p_0
+2024-11-20 22:44:03.282 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='5c8061f6-0363-431e-beeb-3e2437da45a6' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0
+2024-11-20 22:44:06.780 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='438dfb88-8ebb-41ea-9817-3824a46201fc' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-11-20 22:44:06.784 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='6b9ac222-64a6-4c52-815d-65b291f1a883' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[Description], [r].[Name], [r].[UpdatedAt]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__p_0
+2024-11-20 22:44:08.389 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='106dbbeb-a5eb-481b-bff5-1bfedc4cdf62', @p1='100000' (Precision = 18) (Scale = 2), @p2='2024-11-20T22:44:08.3868763+07:00', @p3='Payment for order via VNPay' (Size = 4000), @p4='VNPay' (Size = 4000), @p5='2024-11-20T15:44:08.3868755Z', @p6='Pending' (Size = 4000), @p7=NULL (DbType = DateTime2), @p8='438dfb88-8ebb-41ea-9817-3824a46201fc'], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payments] ([Id], [Amount], [CreatedAt], [Description], [Method], [PaymentDate], [Status], [UpdatedAt], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2024-11-20 22:44:08.394 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='29fb01d2-5eec-4c50-87df-3f77f1f0ae67', @p1=NULL (DbType = Guid), @p2='0', @p3='2024-11-20T22:44:08.3868633+07:00', @p4=NULL (DbType = DateTime2), @p5='False', @p6='2024-11-20T15:44:08.3868618Z', @p7='106dbbeb-a5eb-481b-bff5-1bfedc4cdf62' (Nullable = true), @p8='Draft' (Nullable = false) (Size = 4000), @p9='100000' (Precision = 18) (Scale = 2), @p10=NULL (DbType = DateTime2), @p11='438dfb88-8ebb-41ea-9817-3824a46201fc', @p12='4ce4419c-7d47-44c5-a9f2-98f2c0212b87', @p13='2024-11-20T22:44:08.3868684+07:00', @p14='29fb01d2-5eec-4c50-87df-3f77f1f0ae67', @p15='100000' (Precision = 18) (Scale = 2), @p16='3e32704d-c55e-4ba9-835a-d6e8c6670c6f', @p17='1', @p18=NULL (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Orders] ([Id], [CouponId], [CouponUsed], [CreatedAt], [DeleteDate], [IsDeleted], [OrderDate], [PaymentId], [Status], [TotalPrice], [UpdatedAt], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+INSERT INTO [OrderItems] ([Id], [CreatedAt], [OrderId], [Price], [ProductId], [Quantity], [UpdatedAt])
+VALUES (@p12, @p13, @p14, @p15, @p16, @p17, @p18);
+2024-11-20 22:44:09.056 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 22:44:09.061 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]
+2024-11-20 22:44:12.642 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='9855a285-5328-42eb-90cb-0b5db95f0658' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @__p_0
+2024-11-20 22:44:12.647 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='d2020a52-96ba-4a1a-97fb-8c1e1d9bef3a' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0
+2024-11-20 22:44:18.492 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='438dfb88-8ebb-41ea-9817-3824a46201fc' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[Avatar], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[RoleId], [u].[UpdatedAt]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-11-20 22:44:18.496 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='6b9ac222-64a6-4c52-815d-65b291f1a883' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedAt], [r].[Description], [r].[Name], [r].[UpdatedAt]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__p_0
+2024-11-20 22:44:24.803 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='42138bb5-43f3-44ca-81f3-ba705b9cf4ed', @p1='500000' (Precision = 18) (Scale = 2), @p2='2024-11-20T22:44:24.8015767+07:00', @p3='Payment for order via VNPay' (Size = 4000), @p4='VNPay' (Size = 4000), @p5='2024-11-20T15:44:24.8015762Z', @p6='Pending' (Size = 4000), @p7=NULL (DbType = DateTime2), @p8='438dfb88-8ebb-41ea-9817-3824a46201fc'], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payments] ([Id], [Amount], [CreatedAt], [Description], [Method], [PaymentDate], [Status], [UpdatedAt], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2024-11-20 22:44:24.807 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='88de38c4-2b8b-4b5b-9830-4df6916bc1ef', @p1=NULL (DbType = Guid), @p2='0', @p3='2024-11-20T22:44:24.8015668+07:00', @p4=NULL (DbType = DateTime2), @p5='False', @p6='2024-11-20T15:44:24.8015657Z', @p7='42138bb5-43f3-44ca-81f3-ba705b9cf4ed' (Nullable = true), @p8='Draft' (Nullable = false) (Size = 4000), @p9='500000' (Precision = 18) (Scale = 2), @p10=NULL (DbType = DateTime2), @p11='438dfb88-8ebb-41ea-9817-3824a46201fc', @p12='c93cf8c4-e838-4859-98ad-230b00dda07c', @p13='2024-11-20T22:44:24.8015706+07:00', @p14='88de38c4-2b8b-4b5b-9830-4df6916bc1ef', @p15='500000' (Precision = 18) (Scale = 2), @p16='9855a285-5328-42eb-90cb-0b5db95f0658', @p17='1', @p18=NULL (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Orders] ([Id], [CouponId], [CouponUsed], [CreatedAt], [DeleteDate], [IsDeleted], [OrderDate], [PaymentId], [Status], [TotalPrice], [UpdatedAt], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+INSERT INTO [OrderItems] ([Id], [CreatedAt], [OrderId], [Price], [ProductId], [Quantity], [UpdatedAt])
+VALUES (@p12, @p13, @p14, @p15, @p16, @p17, @p18);
+2024-11-20 22:44:25.853 +07:00 [INF] Get all products GetProductsQuery { Filter = , SortBy = , SortOrderAscending = True, PageIndex = 1, PageSize = 10 }
+2024-11-20 22:44:25.857 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[Image], [p0].[IsRental], [p0].[Name], [p0].[Price], [p0].[Stock], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM (
+    SELECT [p].[Id], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[Image], [p].[IsRental], [p].[Name], [p].[Price], [p].[Stock], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    ORDER BY [p].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+ORDER BY [p0].[Name]

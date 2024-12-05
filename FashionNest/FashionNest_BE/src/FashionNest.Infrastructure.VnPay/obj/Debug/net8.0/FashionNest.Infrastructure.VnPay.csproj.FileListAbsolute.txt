@@ -1,0 +1,13 @@
+D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Infrastructure.VnPay\bin\Debug\net8.0\FashionNest.Infrastructure.VnPay.deps.json
+D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Infrastructure.VnPay\bin\Debug\net8.0\FashionNest.Infrastructure.VnPay.dll
+D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Infrastructure.VnPay\bin\Debug\net8.0\FashionNest.Infrastructure.VnPay.pdb
+D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Infrastructure.VnPay\obj\Debug\net8.0\FashionNest.Infrastructure.VnPay.csproj.AssemblyReference.cache
+D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Infrastructure.VnPay\obj\Debug\net8.0\FashionNest.Infrastructure.VnPay.GeneratedMSBuildEditorConfig.editorconfig
+D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Infrastructure.VnPay\obj\Debug\net8.0\FashionNest.Infrastructure.VnPay.AssemblyInfoInputs.cache
+D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Infrastructure.VnPay\obj\Debug\net8.0\FashionNest.Infrastructure.VnPay.AssemblyInfo.cs
+D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Infrastructure.VnPay\obj\Debug\net8.0\FashionNest.Infrastructure.VnPay.csproj.CoreCompileInputs.cache
+D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Infrastructure.VnPay\obj\Debug\net8.0\FashionNest.Infrastructure.VnPay.sourcelink.json
+D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Infrastructure.VnPay\obj\Debug\net8.0\FashionNest.Infrastructure.VnPay.dll
+D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Infrastructure.VnPay\obj\Debug\net8.0\refint\FashionNest.Infrastructure.VnPay.dll
+D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Infrastructure.VnPay\obj\Debug\net8.0\FashionNest.Infrastructure.VnPay.pdb
+D:\NgocLinhHome\C_sharp\workspace\FashionNest\src\FashionNest.Infrastructure.VnPay\obj\Debug\net8.0\ref\FashionNest.Infrastructure.VnPay.dll

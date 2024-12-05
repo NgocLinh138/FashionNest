@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34601.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FashionNest.API", "FashionNest.API\FashionNest.API.csproj", "{2677113E-9417-4FCD-AFD9-94E0BBD18541}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FashionNest.Application", "FashionNest.Application\FashionNest.Application.csproj", "{DA7526EA-4718-423C-BDE6-417C78D56752}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FashionNest.Infrastructure", "FashionNest.Infrastructure\FashionNest.Infrastructure.csproj", "{7CBAA6F6-F935-4262-853D-F98A9E553FE0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FashionNest.Domain", "FashionNest.Domain\FashionNest.Domain.csproj", "{35BBA316-9035-44E0-868D-0D33EF2F9042}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FashionNest.Infrastructure.VnPay", "FashionNest.Infrastructure.VnPay\FashionNest.Infrastructure.VnPay.csproj", "{7C457375-100D-4688-A411-E1E7557C82F8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2677113E-9417-4FCD-AFD9-94E0BBD18541}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2677113E-9417-4FCD-AFD9-94E0BBD18541}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2677113E-9417-4FCD-AFD9-94E0BBD18541}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2677113E-9417-4FCD-AFD9-94E0BBD18541}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA7526EA-4718-423C-BDE6-417C78D56752}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA7526EA-4718-423C-BDE6-417C78D56752}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA7526EA-4718-423C-BDE6-417C78D56752}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA7526EA-4718-423C-BDE6-417C78D56752}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CBAA6F6-F935-4262-853D-F98A9E553FE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CBAA6F6-F935-4262-853D-F98A9E553FE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CBAA6F6-F935-4262-853D-F98A9E553FE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CBAA6F6-F935-4262-853D-F98A9E553FE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35BBA316-9035-44E0-868D-0D33EF2F9042}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35BBA316-9035-44E0-868D-0D33EF2F9042}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35BBA316-9035-44E0-868D-0D33EF2F9042}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35BBA316-9035-44E0-868D-0D33EF2F9042}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C457375-100D-4688-A411-E1E7557C82F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C457375-100D-4688-A411-E1E7557C82F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C457375-100D-4688-A411-E1E7557C82F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C457375-100D-4688-A411-E1E7557C82F8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BB85EA13-DD73-4DB2-B896-2ED3137D9798}
+	EndGlobalSection
+EndGlobal
